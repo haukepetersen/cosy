@@ -1,0 +1,1426 @@
+Archive member included because of file (symbol)
+
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o (kernel_init)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o) (thread_create)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o) (sched_active_thread)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o) (bitarithm_lsb)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o) (clist_add)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o (putchar)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o) (thread_yield_higher)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o) (disableIRQ)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o) (lpm_set)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o) (uart_stdio_read)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o (board_init)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o) (main)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o) (auto_init)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o) (mutex_lock)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o) (core_panic)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o) (priority_queue_remove_head)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o) (atomic_cas)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o) (msp430_cpu_init)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o) (panic_arch)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o) (uart_init)
+/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o) (tsrb_get)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o) (__udivsi3)
+/usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o) (printf)
+/usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                              /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o) (vuprintf)
+/usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o (puts)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+                              /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o) (__udivhi3)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+                              /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o) (__udivdi3)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o (_reset_vector__)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__watchdog_support)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__init_stack)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__low_level_init)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__do_copy_data)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__do_clear_bss)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (__stop_progExec__)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o) (_endless_loop__)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+                              /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o (_unexpected_)
+/usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o (__do_global_ctors)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+sfr              0x0000000000000000 0x0000000000000010
+peripheral_8bit  0x0000000000000010 0x00000000000000f0
+peripheral_16bit 0x0000000000000100 0x0000000000000100
+ram_mirror       0x0000000000000200 0x0000000000000800 xw
+infomem          0x0000000000001000 0x0000000000000100
+infod            0x0000000000001000 0x0000000000000040
+infoc            0x0000000000001040 0x0000000000000040
+infob            0x0000000000001080 0x0000000000000040
+infoa            0x00000000000010c0 0x0000000000000040
+ram              0x0000000000001100 0x0000000000002000 xw
+rom              0x0000000000003100 0x000000000000cebe xr
+vectors          0x000000000000ffc0 0x0000000000000040
+far_rom          0x0000000000010000 0x000000000000a000
+bsl              0x0000000000000000 0x0000000000000000
+ram2             0x0000000000000000 0x0000000000000000 xw
+usbram           0x0000000000000000 0x0000000000000000 xw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+START GROUP
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/oneway_malloc.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph_common.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/sys.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a
+LOAD /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a
+LOAD /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libm.a
+END GROUP
+LOAD /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a
+LOAD /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a
+LOAD /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a
+LOAD /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a
+LOAD /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a
+                0x0000000000000040                PROVIDE (__info_segment_size, 0x40)
+                0x0000000000001000                PROVIDE (__infod, 0x1000)
+                0x0000000000001040                PROVIDE (__infoc, 0x1040)
+                0x0000000000001080                PROVIDE (__infob, 0x1080)
+                0x00000000000010c0                PROVIDE (__infoa, 0x10c0)
+                0x0000000000000000                __IE1 = 0x0
+                0x0000000000000002                __IFG1 = 0x2
+                0x0000000000000001                __IE2 = 0x1
+                0x0000000000000003                __IFG2 = 0x3
+                0x0000000000000006                __UC1IE = 0x6
+                0x0000000000000007                __UC1IFG = 0x7
+                0x00000000000001a0                __ADC12CTL0 = 0x1a0
+                0x00000000000001a2                __ADC12CTL1 = 0x1a2
+                0x00000000000001a4                __ADC12IFG = 0x1a4
+                0x00000000000001a6                __ADC12IE = 0x1a6
+                0x00000000000001a8                __ADC12IV = 0x1a8
+                0x0000000000000140                __ADC12MEM0 = 0x140
+                0x0000000000000142                __ADC12MEM1 = 0x142
+                0x0000000000000144                __ADC12MEM2 = 0x144
+                0x0000000000000146                __ADC12MEM3 = 0x146
+                0x0000000000000148                __ADC12MEM4 = 0x148
+                0x000000000000014a                __ADC12MEM5 = 0x14a
+                0x000000000000014c                __ADC12MEM6 = 0x14c
+                0x000000000000014e                __ADC12MEM7 = 0x14e
+                0x0000000000000150                __ADC12MEM8 = 0x150
+                0x0000000000000152                __ADC12MEM9 = 0x152
+                0x0000000000000154                __ADC12MEM10 = 0x154
+                0x0000000000000156                __ADC12MEM11 = 0x156
+                0x0000000000000158                __ADC12MEM12 = 0x158
+                0x000000000000015a                __ADC12MEM13 = 0x15a
+                0x000000000000015c                __ADC12MEM14 = 0x15c
+                0x000000000000015e                __ADC12MEM15 = 0x15e
+                0x0000000000000080                __ADC12MCTL0 = 0x80
+                0x0000000000000081                __ADC12MCTL1 = 0x81
+                0x0000000000000082                __ADC12MCTL2 = 0x82
+                0x0000000000000083                __ADC12MCTL3 = 0x83
+                0x0000000000000084                __ADC12MCTL4 = 0x84
+                0x0000000000000085                __ADC12MCTL5 = 0x85
+                0x0000000000000086                __ADC12MCTL6 = 0x86
+                0x0000000000000087                __ADC12MCTL7 = 0x87
+                0x0000000000000088                __ADC12MCTL8 = 0x88
+                0x0000000000000089                __ADC12MCTL9 = 0x89
+                0x000000000000008a                __ADC12MCTL10 = 0x8a
+                0x000000000000008b                __ADC12MCTL11 = 0x8b
+                0x000000000000008c                __ADC12MCTL12 = 0x8c
+                0x000000000000008d                __ADC12MCTL13 = 0x8d
+                0x000000000000008e                __ADC12MCTL14 = 0x8e
+                0x000000000000008f                __ADC12MCTL15 = 0x8f
+                0x0000000000000056                __DCOCTL = 0x56
+                0x0000000000000057                __BCSCTL1 = 0x57
+                0x0000000000000058                __BCSCTL2 = 0x58
+                0x0000000000000053                __BCSCTL3 = 0x53
+                0x0000000000000059                __CACTL1 = 0x59
+                0x000000000000005a                __CACTL2 = 0x5a
+                0x000000000000005b                __CAPD = 0x5b
+                0x00000000000001c0                __DAC12_0CTL = 0x1c0
+                0x00000000000001c2                __DAC12_1CTL = 0x1c2
+                0x00000000000001c8                __DAC12_0DAT = 0x1c8
+                0x00000000000001ca                __DAC12_1DAT = 0x1ca
+                0x0000000000000122                __DMACTL0 = 0x122
+                0x0000000000000124                __DMACTL1 = 0x124
+                0x0000000000000126                __DMAIV = 0x126
+                0x00000000000001d0                __DMA0CTL = 0x1d0
+                0x00000000000001dc                __DMA1CTL = 0x1dc
+                0x00000000000001e8                __DMA2CTL = 0x1e8
+                0x00000000000001d2                __DMA0SA = 0x1d2
+                0x00000000000001d2                __DMA0SAL = 0x1d2
+                0x00000000000001d6                __DMA0DA = 0x1d6
+                0x00000000000001d6                __DMA0DAL = 0x1d6
+                0x00000000000001da                __DMA0SZ = 0x1da
+                0x00000000000001de                __DMA1SA = 0x1de
+                0x00000000000001de                __DMA1SAL = 0x1de
+                0x00000000000001e2                __DMA1DA = 0x1e2
+                0x00000000000001e2                __DMA1DAL = 0x1e2
+                0x00000000000001e6                __DMA1SZ = 0x1e6
+                0x00000000000001ea                __DMA2SA = 0x1ea
+                0x00000000000001ea                __DMA2SAL = 0x1ea
+                0x00000000000001ee                __DMA2DA = 0x1ee
+                0x00000000000001ee                __DMA2DAL = 0x1ee
+                0x00000000000001f2                __DMA2SZ = 0x1f2
+                0x0000000000000128                __FCTL1 = 0x128
+                0x000000000000012a                __FCTL2 = 0x12a
+                0x000000000000012c                __FCTL3 = 0x12c
+                0x00000000000001be                __FCTL4 = 0x1be
+                0x0000000000000130                __MPY = 0x130
+                0x0000000000000132                __MPYS = 0x132
+                0x0000000000000134                __MAC = 0x134
+                0x0000000000000136                __MACS = 0x136
+                0x0000000000000138                __OP2 = 0x138
+                0x000000000000013a                __RESLO = 0x13a
+                0x000000000000013c                __RESHI = 0x13c
+                0x000000000000013e                __SUMEXT = 0x13e
+                0x0000000000000020                __P1IN = 0x20
+                0x0000000000000021                __P1OUT = 0x21
+                0x0000000000000022                __P1DIR = 0x22
+                0x0000000000000023                __P1IFG = 0x23
+                0x0000000000000024                __P1IES = 0x24
+                0x0000000000000025                __P1IE = 0x25
+                0x0000000000000026                __P1SEL = 0x26
+                0x0000000000000027                __P1REN = 0x27
+                0x0000000000000028                __P2IN = 0x28
+                0x0000000000000029                __P2OUT = 0x29
+                0x000000000000002a                __P2DIR = 0x2a
+                0x000000000000002b                __P2IFG = 0x2b
+                0x000000000000002c                __P2IES = 0x2c
+                0x000000000000002d                __P2IE = 0x2d
+                0x000000000000002e                __P2SEL = 0x2e
+                0x000000000000002f                __P2REN = 0x2f
+                0x0000000000000018                __P3IN = 0x18
+                0x0000000000000019                __P3OUT = 0x19
+                0x000000000000001a                __P3DIR = 0x1a
+                0x000000000000001b                __P3SEL = 0x1b
+                0x0000000000000010                __P3REN = 0x10
+                0x000000000000001c                __P4IN = 0x1c
+                0x000000000000001d                __P4OUT = 0x1d
+                0x000000000000001e                __P4DIR = 0x1e
+                0x000000000000001f                __P4SEL = 0x1f
+                0x0000000000000011                __P4REN = 0x11
+                0x0000000000000030                __P5IN = 0x30
+                0x0000000000000031                __P5OUT = 0x31
+                0x0000000000000032                __P5DIR = 0x32
+                0x0000000000000033                __P5SEL = 0x33
+                0x0000000000000012                __P5REN = 0x12
+                0x0000000000000034                __P6IN = 0x34
+                0x0000000000000035                __P6OUT = 0x35
+                0x0000000000000036                __P6DIR = 0x36
+                0x0000000000000037                __P6SEL = 0x37
+                0x0000000000000013                __P6REN = 0x13
+                0x0000000000000038                __P7IN = 0x38
+                0x000000000000003a                __P7OUT = 0x3a
+                0x000000000000003c                __P7DIR = 0x3c
+                0x000000000000003e                __P7SEL = 0x3e
+                0x0000000000000014                __P7REN = 0x14
+                0x0000000000000039                __P8IN = 0x39
+                0x000000000000003b                __P8OUT = 0x3b
+                0x000000000000003d                __P8DIR = 0x3d
+                0x000000000000003f                __P8SEL = 0x3f
+                0x0000000000000015                __P8REN = 0x15
+                0x0000000000000038                __PAIN = 0x38
+                0x000000000000003a                __PAOUT = 0x3a
+                0x000000000000003c                __PADIR = 0x3c
+                0x000000000000003e                __PASEL = 0x3e
+                0x0000000000000014                __PAREN = 0x14
+                0x0000000000000055                __SVSCTL = 0x55
+                0x000000000000012e                __TAIV = 0x12e
+                0x0000000000000160                __TACTL = 0x160
+                0x0000000000000162                __TACCTL0 = 0x162
+                0x0000000000000164                __TACCTL1 = 0x164
+                0x0000000000000166                __TACCTL2 = 0x166
+                0x0000000000000170                __TAR = 0x170
+                0x0000000000000172                __TACCR0 = 0x172
+                0x0000000000000174                __TACCR1 = 0x174
+                0x0000000000000176                __TACCR2 = 0x176
+                0x000000000000011e                __TBIV = 0x11e
+                0x0000000000000180                __TBCTL = 0x180
+                0x0000000000000182                __TBCCTL0 = 0x182
+                0x0000000000000184                __TBCCTL1 = 0x184
+                0x0000000000000186                __TBCCTL2 = 0x186
+                0x0000000000000188                __TBCCTL3 = 0x188
+                0x000000000000018a                __TBCCTL4 = 0x18a
+                0x000000000000018c                __TBCCTL5 = 0x18c
+                0x000000000000018e                __TBCCTL6 = 0x18e
+                0x0000000000000190                __TBR = 0x190
+                0x0000000000000192                __TBCCR0 = 0x192
+                0x0000000000000194                __TBCCR1 = 0x194
+                0x0000000000000196                __TBCCR2 = 0x196
+                0x0000000000000198                __TBCCR3 = 0x198
+                0x000000000000019a                __TBCCR4 = 0x19a
+                0x000000000000019c                __TBCCR5 = 0x19c
+                0x000000000000019e                __TBCCR6 = 0x19e
+                0x0000000000000060                __UCA0CTL0 = 0x60
+                0x0000000000000061                __UCA0CTL1 = 0x61
+                0x0000000000000062                __UCA0BR0 = 0x62
+                0x0000000000000063                __UCA0BR1 = 0x63
+                0x0000000000000064                __UCA0MCTL = 0x64
+                0x0000000000000065                __UCA0STAT = 0x65
+                0x0000000000000066                __UCA0RXBUF = 0x66
+                0x0000000000000067                __UCA0TXBUF = 0x67
+                0x000000000000005d                __UCA0ABCTL = 0x5d
+                0x000000000000005e                __UCA0IRTCTL = 0x5e
+                0x000000000000005f                __UCA0IRRCTL = 0x5f
+                0x0000000000000068                __UCB0CTL0 = 0x68
+                0x0000000000000069                __UCB0CTL1 = 0x69
+                0x000000000000006a                __UCB0BR0 = 0x6a
+                0x000000000000006b                __UCB0BR1 = 0x6b
+                0x000000000000006c                __UCB0I2CIE = 0x6c
+                0x000000000000006d                __UCB0STAT = 0x6d
+                0x000000000000006e                __UCB0RXBUF = 0x6e
+                0x000000000000006f                __UCB0TXBUF = 0x6f
+                0x0000000000000118                __UCB0I2COA = 0x118
+                0x000000000000011a                __UCB0I2CSA = 0x11a
+                0x00000000000000d0                __UCA1CTL0 = 0xd0
+                0x00000000000000d1                __UCA1CTL1 = 0xd1
+                0x00000000000000d2                __UCA1BR0 = 0xd2
+                0x00000000000000d3                __UCA1BR1 = 0xd3
+                0x00000000000000d4                __UCA1MCTL = 0xd4
+                0x00000000000000d5                __UCA1STAT = 0xd5
+                0x00000000000000d6                __UCA1RXBUF = 0xd6
+                0x00000000000000d7                __UCA1TXBUF = 0xd7
+                0x00000000000000cd                __UCA1ABCTL = 0xcd
+                0x00000000000000ce                __UCA1IRTCTL = 0xce
+                0x00000000000000cf                __UCA1IRRCTL = 0xcf
+                0x00000000000000d8                __UCB1CTL0 = 0xd8
+                0x00000000000000d9                __UCB1CTL1 = 0xd9
+                0x00000000000000da                __UCB1BR0 = 0xda
+                0x00000000000000db                __UCB1BR1 = 0xdb
+                0x00000000000000dc                __UCB1I2CIE = 0xdc
+                0x00000000000000dd                __UCB1STAT = 0xdd
+                0x00000000000000de                __UCB1RXBUF = 0xde
+                0x00000000000000df                __UCB1TXBUF = 0xdf
+                0x000000000000017c                __UCB1I2COA = 0x17c
+                0x000000000000017e                __UCB1I2CSA = 0x17e
+                0x0000000000000120                __WDTCTL = 0x120
+                0x00000000000010c0                __TLV_CHECKSUM = 0x10c0
+                0x00000000000010f6                __TLV_DCO_30_TAG = 0x10f6
+                0x00000000000010f7                __TLV_DCO_30_LEN = 0x10f7
+                0x00000000000010da                __TLV_ADC12_1_TAG = 0x10da
+                0x00000000000010db                __TLV_ADC12_1_LEN = 0x10db
+                0x00000000000010f8                __CALDCO_16MHZ = 0x10f8
+                0x00000000000010f9                __CALBC1_16MHZ = 0x10f9
+                0x00000000000010fa                __CALDCO_12MHZ = 0x10fa
+                0x00000000000010fb                __CALBC1_12MHZ = 0x10fb
+                0x00000000000010fc                __CALDCO_8MHZ = 0x10fc
+                0x00000000000010fd                __CALBC1_8MHZ = 0x10fd
+                0x00000000000010fe                __CALDCO_1MHZ = 0x10fe
+                0x00000000000010ff                __CALBC1_1MHZ = 0x10ff
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.text
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+
+.rela.text
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+
+.rel.rodata
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+
+.rela.rodata
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+
+.rel.data
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+
+.rela.data
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+
+.rel.bss
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.bss
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000003100     0x156a
+                0x0000000000003100                . = ALIGN (0x2)
+ *(.init .init.*)
+ *(.init0)
+ .init0         0x0000000000003100        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+                0x0000000000003100                _reset_vector__
+ *(.init1)
+ .init1         0x0000000000003100        0xc /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                0x0000000000003100                __watchdog_support
+ *(.init2)
+ .init2         0x000000000000310c        0x4 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+                0x000000000000310c                __init_stack
+ *(.init3)
+ .init3         0x0000000000003110        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+                0x0000000000003110                __low_level_init
+ *(.init4)
+ .init4         0x0000000000003110       0x18 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+                0x0000000000003110                __do_copy_data
+ .init4         0x0000000000003128       0x16 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+                0x0000000000003128                __do_clear_bss
+ *(.init5)
+ *(.init6)
+ .init6         0x000000000000313e       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+                0x000000000000313e                __do_global_ctors
+ *(.init7)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000000000003152       0x26 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+                0x0000000000003152                main
+ *(.fini9)
+ .fini9         0x0000000000003178        0x4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                0x0000000000003178                __main_epilogue
+ .fini9         0x000000000000317c        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+                0x000000000000317c                __stop_progExec__
+ *(.fini8)
+ *(.fini7)
+ *(.fini6)
+ *(.fini5)
+ *(.fini4)
+ *(.fini3)
+ *(.fini2)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000000000000317c        0x6 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+                0x000000000000317c                _endless_loop__
+ *(.fini .fini.*)
+                0x0000000000003182                . = ALIGN (0x2)
+                0x0000000000003182                __ctors_start = .
+ *(.ctors)
+ .ctors         0x0000000000003182        0x2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+                0x0000000000003184                __ctors_end = .
+                0x0000000000003184                __dtors_start = .
+ *(.dtors)
+                0x0000000000003184                __dtors_end = .
+                0x0000000000003184                . = ALIGN (0x2)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000003184        0x4 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+                0x0000000000003184                __isr_14
+                0x0000000000003184                __isr_24
+                0x0000000000003184                __isr_4
+                0x0000000000003184                __isr_19
+                0x0000000000003184                __isr_29
+                0x0000000000003184                __isr_11
+                0x0000000000003184                __isr_16
+                0x0000000000003184                __isr_26
+                0x0000000000003184                __isr_5
+                0x0000000000003184                __isr_2
+                0x0000000000003184                __isr_10
+                0x0000000000003184                __isr_7
+                0x0000000000003184                __isr_25
+                0x0000000000003184                __isr_0
+                0x0000000000003184                __isr_28
+                0x0000000000003184                __isr_8
+                0x0000000000003184                __isr_20
+                0x0000000000003184                __isr_3
+                0x0000000000003184                __isr_18
+                0x0000000000003184                __isr_12
+                0x0000000000003184                __isr_13
+                0x0000000000003184                __isr_27
+                0x0000000000003184                __isr_9
+                0x0000000000003184                __isr_30
+                0x0000000000003184                __isr_6
+                0x0000000000003184                __isr_22
+                0x0000000000003184                __isr_1
+                0x0000000000003184                __isr_15
+                0x0000000000003184                __isr_17
+                0x0000000000003184                __isr_21
+ .text.crt0     0x0000000000003188        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .text          0x0000000000003188        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .text.startup  0x0000000000003188       0x1a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .text          0x00000000000031a2       0x6c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+                0x00000000000031c2                kernel_init
+ .text          0x000000000000320e      0x1ec /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+                0x000000000000320e                thread_get
+                0x0000000000003224                thread_getstatus
+                0x0000000000003236                thread_getname
+                0x0000000000003248                thread_sleep
+                0x0000000000003270                thread_wakeup
+                0x00000000000032b4                thread_yield
+                0x00000000000032de                thread_measure_stack_free
+                0x00000000000032ee                thread_create
+ .text          0x00000000000033fa      0x13e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                0x00000000000033fa                sched_run
+                0x0000000000003446                sched_set_status
+                0x00000000000034ec                sched_switch
+                0x0000000000003514                sched_task_exit
+ .text          0x0000000000003538       0x32 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+                0x0000000000003538                bitarithm_msb
+                0x0000000000003546                bitarithm_lsb
+                0x0000000000003556                bitarithm_bits_set
+ .text          0x000000000000356a       0x64 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+                0x000000000000356a                clist_add
+                0x00000000000035aa                clist_remove
+ .text          0x00000000000035ce       0x26 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+                0x00000000000035ce                getchar
+                0x00000000000035e0                putchar
+ .text          0x00000000000035f4       0xb2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                0x00000000000035f4                thread_yield_higher
+                0x0000000000003640                cpu_switch_context_exit
+                0x000000000000366a                thread_stack_init
+                0x00000000000036a0                reboot_arch
+ .text          0x00000000000036a6       0x28 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                0x00000000000036a6                disableIRQ
+                0x00000000000036b2                enableIRQ
+                0x00000000000036be                restoreIRQ
+                0x00000000000036c8                inISR
+ .text          0x00000000000036ce       0xb2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+                0x00000000000036ce                lpm_init
+                0x00000000000036d4                lpm_get
+                0x000000000000371e                lpm_set
+                0x0000000000003776                lpm_awake
+                0x000000000000377c                lpm_begin_awake
+                0x000000000000377e                lpm_end_awake
+ .text          0x0000000000003780       0x60 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+                0x0000000000003780                uart_stdio_rx_cb
+                0x0000000000003792                uart_stdio_init
+                0x00000000000037a8                uart_stdio_read
+                0x00000000000037cc                uart_stdio_write
+ .text          0x00000000000037e0       0x94 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+                0x00000000000037e0                msp430_init_dco
+                0x0000000000003800                board_init
+ .text          0x0000000000003874        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .text          0x0000000000003874        0x2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+                0x0000000000003874                auto_init
+ .text          0x0000000000003876      0x118 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                0x0000000000003898                mutex_trylock
+                0x000000000000389e                mutex_lock
+                0x00000000000038fe                mutex_unlock
+                0x0000000000003948                mutex_unlock_and_sleep
+ .text          0x000000000000398e       0x3a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                0x000000000000398e                core_panic
+ .text          0x00000000000039c8       0x5e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+                0x00000000000039c8                priority_queue_remove
+                0x00000000000039e2                priority_queue_remove_head
+                0x00000000000039f0                priority_queue_add
+ .text          0x0000000000003a26       0x28 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+                0x0000000000003a26                atomic_cas
+ .text          0x0000000000003a4e       0x80 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+                0x0000000000003a4e                msp430_cpu_init
+                0x0000000000003a6e                sbrk
+                0x0000000000003abc                splhigh_
+                0x0000000000003ac6                splx_
+ .text          0x0000000000003ace        0xe /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+                0x0000000000003ace                panic_arch
+ .text          0x0000000000003adc      0x140 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                0x0000000000003adc                uart_init
+                0x0000000000003b8c                uart_write
+                0x0000000000003ba8                uart_poweron
+                0x0000000000003baa                uart_poweroff
+                0x0000000000003bac                isr_uart_0_rx
+                0x0000000000003bac                __isr_23
+ .text          0x0000000000003c1c       0xd4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+                0x0000000000003c1c                tsrb_get_one
+                0x0000000000003c48                tsrb_get
+                0x0000000000003c84                tsrb_add_one
+                0x0000000000003cb6                tsrb_add
+ .text          0x0000000000003cf0        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .text.libgcc   0x0000000000003cf0       0x38 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+                0x0000000000003cf0                __udivsi3
+                0x0000000000003cf0                __ext_udivmod32
+                0x0000000000003d1e                __umodsi3
+ .text          0x0000000000003d28       0x1e /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                0x0000000000003d28                printf
+                0x0000000000003d38                vprintf
+ .text          0x0000000000003d46      0x818 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                0x0000000000003ec2                vuprintf
+ .text          0x000000000000455e       0x2c /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                0x000000000000455e                puts
+ .text          0x000000000000458a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .text.libgcc   0x000000000000458a       0x22 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+                0x000000000000458a                __udivhi3
+                0x000000000000458a                __ext_udivmod16
+                0x00000000000045a4                __umodhi3
+ .text          0x00000000000045ac        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .text.libgcc   0x00000000000045ac       0xbc /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+                0x00000000000045ac                __xabi_udivmod64
+                0x00000000000045fe                __udivdi3
+                0x0000000000004618                __umoddi3
+                0x000000000000463a                __udivmoddi4
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .text          0x0000000000004668        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .text.crt0     0x0000000000004668        0x2 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+                0x0000000000004668                _unexpected_
+ .text          0x000000000000466a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+                0x000000000000466a                . = ALIGN (0x2)
+
+.rodata         0x000000000000466a      0x128
+                0x000000000000466a                . = ALIGN (0x2)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x000000000000466a       0x2f /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .rodata        0x0000000000004699       0x49 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+ .rodata        0x00000000000046e2        0xa /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .rodata        0x00000000000046ec       0x65 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .rodata        0x0000000000004751       0x39 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                0x0000000000004778                assert_crash_message
+ .rodata        0x000000000000478a        0x7 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                0x0000000000004792                . = ALIGN (0x2)
+ *fill*         0x0000000000004791        0x1 00
+                0x0000000000004792                _etext = .
+
+.data           0x0000000000001100        0xe load address 0x0000000000004792
+                0x0000000000001100                . = ALIGN (0x2)
+                0x0000000000001100                PROVIDE (__data_start, .)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000001100        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .data          0x0000000000001100        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .data          0x0000000000001100        0x4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+                0x0000000000001100                idle_name
+                0x0000000000001102                main_name
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+ .data          0x0000000000001104        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .data          0x0000000000001104        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .data          0x000000000000110c        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+ .data          0x000000000000110c        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .data          0x000000000000110c        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+ .data          0x000000000000110c        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .data          0x000000000000110c        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .data          0x000000000000110c        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .data          0x000000000000110c        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .data          0x000000000000110c        0x2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .data          0x000000000000110e        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+ .data          0x000000000000110e        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .data          0x000000000000110e        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .data          0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+                0x000000000000110e                . = ALIGN (0x2)
+                0x000000000000110e                _edata = .
+                0x0000000000004792                PROVIDE (__data_load_start, LOADADDR (.data))
+                0x000000000000000e                PROVIDE (__data_size, SIZEOF (.data))
+
+.bss            0x000000000000110e      0x41c load address 0x00000000000047a0
+                0x000000000000110e                PROVIDE (__bss_start, .)
+ *(.bss .bss.*)
+ .bss           0x000000000000110e        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+ .bss           0x000000000000110e        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .bss           0x000000000000110e      0x262 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+                0x000000000000110e                lpm_prevent_sleep
+ .bss           0x0000000000001370        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .bss           0x0000000000001370       0x6e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                0x0000000000001370                sched_runqueues
+                0x0000000000001390                sched_active_pid
+                0x0000000000001392                sched_active_thread
+                0x0000000000001394                sched_threads
+                0x00000000000013d6                sched_context_switch_request
+                0x00000000000013d8                sched_num_threads
+ .bss           0x00000000000013de        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .bss           0x00000000000013de        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .bss           0x00000000000013de        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .bss           0x00000000000013de        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .bss           0x00000000000013de      0x102 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                0x00000000000013de                __isr_stack
+                0x00000000000014de                __inISR
+ .bss           0x00000000000014e0        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .bss           0x00000000000014e0       0x44 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .bss           0x0000000000001524        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+ .bss           0x0000000000001524        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .bss           0x0000000000001524        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+ .bss           0x0000000000001524        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .bss           0x0000000000001524        0x2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .bss           0x0000000000001526        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .bss           0x0000000000001526        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .bss           0x0000000000001526        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .bss           0x0000000000001526        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+ .bss           0x0000000000001526        0x4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .bss           0x000000000000152a        0x0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .bss           0x000000000000152a        0x0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+ *(COMMON)
+                0x000000000000152a                . = ALIGN (0x2)
+                0x000000000000152a                PROVIDE (__bss_end, .)
+                0x000000000000041c                PROVIDE (__bss_size, SIZEOF (.bss))
+
+.noinit         0x000000000000152a        0x2 load address 0x00000000000047a0
+                0x000000000000152a                PROVIDE (__noinit_start, .)
+ *(.noinit .noinit.*)
+ .noinit.crt0   0x000000000000152a        0x2 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                0x000000000000152a                __wdt_clear_value
+                0x000000000000152c                . = ALIGN (0x2)
+                0x000000000000152c                PROVIDE (__noinit_end, .)
+                0x000000000000152c                . = ALIGN (0x2)
+                0x000000000000152c                _end = .
+
+.infomem        0x0000000000001000        0x0
+ *(.infomem)
+                0x0000000000001000                . = ALIGN (0x2)
+ *(.infomem.*)
+
+.infomemnobits  0x0000000000001000        0x0
+ *(.infomemnobits)
+                0x0000000000001000                . = ALIGN (0x2)
+ *(.infomemnobits.*)
+
+.infoa
+ *(.infoa .infoa.*)
+
+.infob
+ *(.infob .infob.*)
+
+.infoc
+ *(.infoc .infoc.*)
+
+.infod
+ *(.infod .infod.*)
+
+.vectors        0x000000000000ffc0       0x40
+                0x000000000000ffc0                PROVIDE (__vectors_start, .)
+ *(.vectors*)
+ .vectors       0x000000000000ffc0       0x40 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+                0x000000000000ffc0                __ivtbl_32
+                0x0000000000010000                _vectors_end = .
+
+.fartext        0x0000000000010000        0x0
+                0x0000000000010000                . = ALIGN (0x2)
+ *(.fartext)
+                0x0000000000010000                . = ALIGN (0x2)
+ *(.fartext.*)
+                0x0000000000010000                _efartext = .
+
+.profiler
+ *(.profiler)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x2c0
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .debug_aranges
+                0x0000000000000014       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+ .debug_aranges
+                0x0000000000000028       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .debug_aranges
+                0x000000000000003c       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+ .debug_aranges
+                0x0000000000000050       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .debug_aranges
+                0x0000000000000064       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .debug_aranges
+                0x0000000000000078       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .debug_aranges
+                0x000000000000008c       0x18 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .debug_aranges
+                0x00000000000000a4       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+ .debug_aranges
+                0x00000000000000b8       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .debug_aranges
+                0x00000000000000cc       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .debug_aranges
+                0x00000000000000e0       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+ .debug_aranges
+                0x00000000000000f4       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .debug_aranges
+                0x0000000000000108       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+ .debug_aranges
+                0x000000000000011c       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .debug_aranges
+                0x0000000000000130       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .debug_aranges
+                0x0000000000000144       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .debug_aranges
+                0x0000000000000158       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .debug_aranges
+                0x000000000000016c       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .debug_aranges
+                0x0000000000000180       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+ .debug_aranges
+                0x0000000000000194       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .debug_aranges
+                0x00000000000001a8       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .debug_aranges
+                0x00000000000001bc       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_aranges
+                0x00000000000001d0       0x14 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_aranges
+                0x00000000000001e4       0x14 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_aranges
+                0x00000000000001f8       0x14 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_aranges
+                0x000000000000020c       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_aranges
+                0x0000000000000220       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_aranges
+                0x0000000000000234       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_aranges
+                0x0000000000000248       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_aranges
+                0x000000000000025c       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_aranges
+                0x0000000000000270       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_aranges
+                0x0000000000000284       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_aranges
+                0x0000000000000298       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .debug_aranges
+                0x00000000000002ac       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x60eb
+ *(.debug_info)
+ .debug_info    0x0000000000000000       0x77 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .debug_info    0x0000000000000077      0x44a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+ .debug_info    0x00000000000004c1      0x6d4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .debug_info    0x0000000000000b95      0x48e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+ .debug_info    0x0000000000001023       0xf9 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .debug_info    0x000000000000111c      0x106 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .debug_info    0x0000000000001222       0x83 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .debug_info    0x00000000000012a5      0x4b0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .debug_info    0x0000000000001755      0x3c9 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+ .debug_info    0x0000000000001b1e      0x448 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .debug_info    0x0000000000001f66      0x4fd /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .debug_info    0x0000000000002463      0x4ea /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+ .debug_info    0x000000000000294d       0x7d /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .debug_info    0x00000000000029ca      0x330 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+ .debug_info    0x0000000000002cfa      0x50e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .debug_info    0x0000000000003208      0x3bc /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .debug_info    0x00000000000035c4      0x3d8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .debug_info    0x000000000000399c      0x38c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .debug_info    0x0000000000003d28      0x416 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .debug_info    0x000000000000413e      0x361 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+ .debug_info    0x000000000000449f      0x7d4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .debug_info    0x0000000000004c73      0x5d0 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .debug_info    0x0000000000005243       0xe0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_info    0x0000000000005323      0x105 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_info    0x0000000000005428      0x565 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_info    0x000000000000598d       0x96 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_info    0x0000000000005a23       0xe0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_info    0x0000000000005b03       0xe0 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_info    0x0000000000005be3       0xb8 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_info    0x0000000000005c9b       0xb8 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_info    0x0000000000005d53       0xb8 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_info    0x0000000000005e0b       0xb8 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_info    0x0000000000005ec3       0xb8 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_info    0x0000000000005f7b       0xb8 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .debug_info    0x0000000000006033       0xb8 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x0000000000000000     0x2017
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x3d /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .debug_abbrev  0x000000000000003d      0x17e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+ .debug_abbrev  0x00000000000001bb      0x23d /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .debug_abbrev  0x00000000000003f8      0x189 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+ .debug_abbrev  0x0000000000000581       0x76 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .debug_abbrev  0x00000000000005f7       0xa6 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .debug_abbrev  0x000000000000069d       0x85 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .debug_abbrev  0x0000000000000722      0x1c5 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .debug_abbrev  0x00000000000008e7      0x17a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+ .debug_abbrev  0x0000000000000a61      0x1b9 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .debug_abbrev  0x0000000000000c1a      0x16c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .debug_abbrev  0x0000000000000d86      0x144 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+ .debug_abbrev  0x0000000000000eca       0x41 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .debug_abbrev  0x0000000000000f0b       0xfb /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+ .debug_abbrev  0x0000000000001006      0x1c5 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .debug_abbrev  0x00000000000011cb      0x160 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .debug_abbrev  0x000000000000132b      0x143 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .debug_abbrev  0x000000000000146e      0x11b /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .debug_abbrev  0x0000000000001589      0x1ac /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .debug_abbrev  0x0000000000001735      0x127 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+ .debug_abbrev  0x000000000000185c      0x230 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .debug_abbrev  0x0000000000001a8c      0x1a4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .debug_abbrev  0x0000000000001c30       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_abbrev  0x0000000000001c44       0xd0 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_abbrev  0x0000000000001d14      0x1ef /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_abbrev  0x0000000000001f03       0x60 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_abbrev  0x0000000000001f63       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_abbrev  0x0000000000001f77       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_abbrev  0x0000000000001f8b       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_abbrev  0x0000000000001f9f       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_abbrev  0x0000000000001fb3       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_abbrev  0x0000000000001fc7       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_abbrev  0x0000000000001fdb       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_abbrev  0x0000000000001fef       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .debug_abbrev  0x0000000000002003       0x14 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+
+.debug_line     0x0000000000000000     0x290a
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x68 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .debug_line    0x0000000000000068      0x1ab /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+ .debug_line    0x0000000000000213      0x20d /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .debug_line    0x0000000000000420      0x185 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+ .debug_line    0x00000000000005a5       0x82 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .debug_line    0x0000000000000627       0x97 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .debug_line    0x00000000000006be       0x6c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .debug_line    0x000000000000072a      0x1fd /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .debug_line    0x0000000000000927      0x187 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+ .debug_line    0x0000000000000aae      0x1f6 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .debug_line    0x0000000000000ca4      0x1f4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .debug_line    0x0000000000000e98      0x198 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+ .debug_line    0x0000000000001030       0x67 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .debug_line    0x0000000000001097      0x162 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+ .debug_line    0x00000000000011f9      0x19f /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .debug_line    0x0000000000001398      0x16e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .debug_line    0x0000000000001506      0x17c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .debug_line    0x0000000000001682      0x165 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .debug_line    0x00000000000017e7      0x19a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .debug_line    0x0000000000001981      0x1ae /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+ .debug_line    0x0000000000001b2f      0x27f /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .debug_line    0x0000000000001dae      0x215 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .debug_line    0x0000000000001fc3       0xa7 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+ .debug_line    0x000000000000206a       0x72 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_line    0x00000000000020dc      0x2ce /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_line    0x00000000000023aa       0x4d /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+ .debug_line    0x00000000000023f7       0x9c /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+ .debug_line    0x0000000000002493       0xd5 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+ .debug_line    0x0000000000002568       0x84 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+ .debug_line    0x00000000000025ec       0x82 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+ .debug_line    0x000000000000266e       0x88 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+ .debug_line    0x00000000000026f6       0x88 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+ .debug_line    0x000000000000277e       0x83 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+ .debug_line    0x0000000000002801       0x82 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+ .debug_line    0x0000000000002883       0x87 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+
+.debug_frame    0x0000000000000000      0x690
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x1e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .debug_frame   0x000000000000001e       0x54 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+ .debug_frame   0x0000000000000072       0x96 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .debug_frame   0x0000000000000108       0x50 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+ .debug_frame   0x0000000000000158       0x36 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .debug_frame   0x000000000000018e       0x2a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .debug_frame   0x00000000000001b8       0x32 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .debug_frame   0x00000000000001ea       0x4e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .debug_frame   0x0000000000000238       0x42 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+ .debug_frame   0x000000000000027a       0x60 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .debug_frame   0x00000000000002da       0x5a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .debug_frame   0x0000000000000334       0x2a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+ .debug_frame   0x000000000000035e       0x34 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .debug_frame   0x0000000000000392       0x1e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+ .debug_frame   0x00000000000003b0       0x6e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .debug_frame   0x000000000000041e       0x24 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .debug_frame   0x0000000000000442       0x36 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .debug_frame   0x0000000000000478       0x28 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .debug_frame   0x00000000000004a0       0x4e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .debug_frame   0x00000000000004ee       0x1e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+ .debug_frame   0x000000000000050c       0x58 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .debug_frame   0x0000000000000564       0x5a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .debug_frame   0x00000000000005be       0x2a /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_frame   0x00000000000005e8       0x84 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_frame   0x000000000000066c       0x24 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+
+.debug_str      0x0000000000000000     0x11d1
+ *(.debug_str)
+ .debug_str     0x0000000000000000       0xb9 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+                                         0xf2 (size before relaxing)
+ .debug_str     0x00000000000000b9      0x259 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+                                        0x33b (size before relaxing)
+ .debug_str     0x0000000000000312      0x172 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+                                        0x3bd (size before relaxing)
+ .debug_str     0x0000000000000484       0xb8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                        0x321 (size before relaxing)
+ .debug_str     0x000000000000053c       0x5a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+                                        0x10e (size before relaxing)
+ .debug_str     0x0000000000000596       0x47 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+                                        0x11c (size before relaxing)
+ .debug_str     0x00000000000005dd       0x48 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+                                         0x82 (size before relaxing)
+ .debug_str     0x0000000000000625       0xd7 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                                        0x339 (size before relaxing)
+ .debug_str     0x00000000000006fc       0x5f /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                                        0x293 (size before relaxing)
+ .debug_str     0x000000000000075b      0x10f /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+                                        0x36e (size before relaxing)
+ .debug_str     0x000000000000086a       0xd8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+                                        0x330 (size before relaxing)
+ .debug_str     0x0000000000000942      0x10c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+                                        0x3c1 (size before relaxing)
+ .debug_str     0x0000000000000a4e       0x3b /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+                                         0xef (size before relaxing)
+ .debug_str     0x0000000000000a89       0x3e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+                                        0x269 (size before relaxing)
+ .debug_str     0x0000000000000ac7       0x9b /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                        0x2f4 (size before relaxing)
+ .debug_str     0x0000000000000b62       0x6d /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                                        0x2fe (size before relaxing)
+ .debug_str     0x0000000000000bcf       0x87 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+                                        0x2bc (size before relaxing)
+ .debug_str     0x0000000000000c56       0x33 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+                                        0x265 (size before relaxing)
+ .debug_str     0x0000000000000c89       0xa3 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+                                        0x2d1 (size before relaxing)
+ .debug_str     0x0000000000000d2c       0x3f /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+                                        0x2ae (size before relaxing)
+ .debug_str     0x0000000000000d6b      0x181 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                                        0x3d6 (size before relaxing)
+ .debug_str     0x0000000000000eec       0x76 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+                                        0x2ca (size before relaxing)
+ .debug_str     0x0000000000000f62       0x67 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                                        0x12a (size before relaxing)
+ .debug_str     0x0000000000000fc9      0x1f3 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                                        0x375 (size before relaxing)
+ .debug_str     0x00000000000011bc       0x15 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                                         0xf0 (size before relaxing)
+
+.debug_loc      0x0000000000000000     0x11b9
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x57 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+ .debug_loc     0x0000000000000057      0x29c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+ .debug_loc     0x00000000000002f3       0xbb /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+ .debug_loc     0x00000000000003ae       0x5a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+ .debug_loc     0x0000000000000408       0x12 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+ .debug_loc     0x000000000000041a       0x3f /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+ .debug_loc     0x0000000000000459       0x8a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .debug_loc     0x00000000000004e3       0x87 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+ .debug_loc     0x000000000000056a       0xbb /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+ .debug_loc     0x0000000000000625       0x3c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .debug_loc     0x0000000000000661      0x141 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+ .debug_loc     0x00000000000007a2       0x31 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+ .debug_loc     0x00000000000007d3       0x28 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+ .debug_loc     0x00000000000007fb       0x4a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+ .debug_loc     0x0000000000000845       0x6b /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+ .debug_loc     0x00000000000008b0       0xde /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .debug_loc     0x000000000000098e      0x136 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+ .debug_loc     0x0000000000000ac4       0x38 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+ .debug_loc     0x0000000000000afc      0x697 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+ .debug_loc     0x0000000000001193       0x26 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0x4c
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+ .debug_ranges  0x0000000000000008        0xc /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+ .debug_ranges  0x0000000000000014        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+ .debug_ranges  0x000000000000001c       0x18 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+ .debug_ranges  0x0000000000000034       0x18 /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                0x0000000000003100                PROVIDE (__stack, (ORIGIN (ram) + 0x2000))
+                0x0000000000004792                PROVIDE (__data_start_rom, _etext)
+                0x00000000000047a0                PROVIDE (__data_end_rom, (_etext + SIZEOF (.data)))
+OUTPUT(/home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.elf elf32-msp430)
+
+Cross Reference Table
+
+Symbol                                            File
+__BCSCTL1                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__BCSCTL2                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__BCSCTL3                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__DCOCTL                                          /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P1DIR                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P1IE                                            /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+__P1OUT                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P1SEL                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P2DIR                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P2IE                                            /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+__P2OUT                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P2SEL                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P3DIR                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P3OUT                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P3SEL                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P4DIR                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P4OUT                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P4SEL                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P5DIR                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P5OUT                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P5SEL                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P6DIR                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P6OUT                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__P6SEL                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+__WDTCTL                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+__bss_size                                        /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+__bss_start                                       /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+__ctors_end                                       /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+__ctors_start                                     /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+__data_load_start                                 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+__data_size                                       /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+__data_start                                      /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+__do_clear_bss                                    /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+__do_copy_data                                    /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+__do_global_ctors                                 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+__ext_udivmod16                                   /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+__ext_udivmod32                                   /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+__inISR                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+__init_stack                                      /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+__isr_0                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_1                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_10                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_11                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_12                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_13                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_14                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_15                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_16                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_17                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_18                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_19                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_2                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_20                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_21                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_22                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_23                                          /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_24                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_25                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_26                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_27                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_28                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_29                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_3                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_30                                          /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_4                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_5                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_6                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_7                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_8                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_9                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__isr_stack                                       /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+__ivtbl_32                                        /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+__low_level_init                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__low_level_init.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+__main_epilogue                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+__stack                                           /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__init_stack.o)
+__stop_progExec__                                 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__stop_progExec__.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+__udivdi3                                         /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+__udivhi3                                         /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+__udivmoddi4                                      /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+__udivsi3                                         /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+__umoddi3                                         /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+__umodhi3                                         /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod16.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+__umodsi3                                         /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod32.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+__watchdog_support                                /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+__wdt_clear_value                                 /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(__watchdog_support.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_ctors430.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_clear_bss.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_copy_data.o)
+__xabi_udivmod64                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libgcc.a(_udivmod64.o)
+_end                                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+_endless_loop__                                   /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_endless_loop__.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+_reset_vector__                                   /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_reset_vector__.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+_unexpected_                                      /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/libcrt0.a(_unexpected_.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/mcpu-430x/mmpy-16/crt0ivtbl32.o
+assert_crash_message                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+atomic_cas                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+auto_init                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/auto_init.a(auto_init.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+bitarithm_bits_set                                /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+bitarithm_lsb                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+bitarithm_msb                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(bitarithm.o)
+board_init                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+clist_add                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+clist_remove                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(clist.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+core_panic                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+cpu_switch_context_exit                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+disableIRQ                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+enableIRQ                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+getchar                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+idle_name                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+inISR                                             /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+isr_uart_0_rx                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+kernel_init                                       /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+lpm_awake                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+lpm_begin_awake                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+lpm_end_awake                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+lpm_get                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+lpm_init                                          /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+lpm_prevent_sleep                                 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+lpm_set                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(lpm_cpu.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+main                                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+main_name                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+msp430_cpu_init                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+msp430_init_dco                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+mutex_lock                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+mutex_trylock                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+mutex_unlock                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+mutex_unlock_and_sleep                            /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+panic_arch                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(panic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+printf                                            /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+priority_queue_add                                /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+priority_queue_remove                             /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+priority_queue_remove_head                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(priority_queue.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+putchar                                           /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+puts                                              /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(puts.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(panic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/hello-world.a(main.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common/startup.o
+reboot_arch                                       /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+restoreIRQ                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(irq.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(atomic.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+sbrk                                              /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+sched_active_pid                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+sched_active_thread                               /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+sched_context_switch_request                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+sched_num_threads                                 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+sched_run                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+sched_runqueues                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+sched_set_status                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+sched_switch                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+sched_task_exit                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+sched_threads                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+splhigh_                                          /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+splx_                                             /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(msp430-main.o)
+thread_create                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(kernel_init.o)
+thread_get                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_getname                                    /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_getstatus                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_measure_stack_free                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_sleep                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_stack_init                                 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_wakeup                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_yield                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+thread_yield_higher                               /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/msp430_common.a(cpu.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(mutex.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(sched.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/core.a(thread.o)
+tsrb_add                                          /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+tsrb_add_one                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+tsrb_get                                          /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+tsrb_get_one                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/tsrb.a(tsrb.o)
+uart_init                                         /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+uart_poweroff                                     /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+uart_poweron                                      /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+uart_stdio_init                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/z1_base.a(board.o)
+uart_stdio_read                                   /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+uart_stdio_rx_cb                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+uart_stdio_write                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/cpu.a(msp430_stdio.o)
+uart_write                                        /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/periph.a(uart.o)
+                                                  /home/hauke/dev/riot/RIOT/examples/hello-world/bin/z1/uart_stdio.a(uart_stdio.o)
+vprintf                                           /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)
+vuprintf                                          /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(vuprintf.o)
+                                                  /usr/lib/gcc/msp430/4.6.3/../../../../msp430/lib/mcpu-430x/mmpy-16/libc.a(printf.o)

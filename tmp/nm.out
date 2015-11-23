@@ -1,0 +1,117 @@
+hit 134217728 00000304 T interrupt_vector   /home/hauke/dev/riot/RIOT/cpu/stm32f1/vectors.c:95
+hit 134218159 00000004 T dummy_handler  /home/hauke/dev/riot/RIOT/cpu/stm32f1/vectors.c:30
+
+hit 134218033 00000004 T _init  /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:57
+hit 134218037 00000060 T _sbrk_r    /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:94
+hit 134218097 00000008 T _read_r    /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:184
+hit 134218105 00000008 T _write_r   /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:206
+hit 134218113 00000010 T _close_r   /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:221
+hit 134218123 00000010 T _lseek_r   /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:238
+hit 134218133 00000010 T _fstat_r   /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:256
+hit 134218143 00000016 T _isatty_r  /home/hauke/dev/riot/RIOT/sys/newlib/syscalls.c:289
+
+hit 134218165 00000092 T sched_run  /home/hauke/dev/riot/RIOT/core/sched.c:63
+hit 134218257 00000104 T sched_set_status   /home/hauke/dev/riot/RIOT/core/sched.c:132
+hit 134218361 00000052 T sched_switch   /home/hauke/dev/riot/RIOT/core/sched.c:157
+hit 134218413 00000060 T sched_task_exit    /home/hauke/dev/riot/RIOT/core/sched.c:182
+hit 134218473 00000016 T bitarithm_lsb  /home/hauke/dev/riot/RIOT/core/bitarithm.c:47
+hit 134218489 00000042 T clist_add  /home/hauke/dev/riot/RIOT/core/clist.c:26
+hit 134218531 00000028 T clist_remove   /home/hauke/dev/riot/RIOT/core/clist.c:46
+hit 134219593 00000024 t main_trampoline    /home/hauke/dev/riot/RIOT/core/kernel_init.c:49
+hit 134219617 00000020 t idle_thread    /home/hauke/dev/riot/RIOT/core/kernel_init.c:68
+hit 134219637 00000088 T kernel_init    /home/hauke/dev/riot/RIOT/core/kernel_init.c:92
+hit 134219725 00000028 t atomic_set_to_one  /home/hauke/dev/riot/RIOT/core/include/atomic.h:100
+hit 134219753 00000088 T mutex_lock /home/hauke/dev/riot/RIOT/core/mutex.c:45
+hit 134219841 00000062 T mutex_unlock   /home/hauke/dev/riot/RIOT/core/mutex.c:85
+hit 134219905 00000068 T core_panic /home/hauke/dev/riot/RIOT/core/panic.c:44
+hit 134219973 00000012 T priority_queue_remove_head /home/hauke/dev/riot/RIOT/core/priority_queue.c:43
+hit 134219985 00000030 T priority_queue_add /home/hauke/dev/riot/RIOT/core/priority_queue.c:52
+hit 134220017 00000052 T thread_yield   /home/hauke/dev/riot/RIOT/core/thread.c:93
+hit 134220069 00000248 T thread_create  /home/hauke/dev/riot/RIOT/core/thread.c:121
+
+hit 134218559 00000008 T irq_arch_disable   /home/hauke/dev/riot/RIOT/cpu/cortexm_common/irq_arch.c:28
+hit 134218567 00000008 T irq_arch_enable    /home/hauke/dev/riot/RIOT/cpu/cortexm_common/irq_arch.c:38
+hit 134218575 00000006 T irq_arch_restore   /home/hauke/dev/riot/RIOT/cpu/cortexm_common/irq_arch.c:47
+hit 134218581 00000008 T irq_arch_in    /home/hauke/dev/riot/RIOT/cpu/cortexm_common/irq_arch.c:55
+hit 134218589 00000108 T thread_arch_stack_init /home/hauke/dev/riot/RIOT/cpu/cortexm_common/thread_arch.c:125
+hit 134218697 00000008 T thread_arch_start_threading    /home/hauke/dev/riot/RIOT/cpu/cortexm_common/thread_arch.c:255
+hit 134218705 00000016 T thread_arch_yield  /home/hauke/dev/riot/RIOT/cpu/cortexm_common/thread_arch.c:266
+hit 134218721 00000040 T arch_context_switch    /home/hauke/dev/riot/RIOT/cpu/cortexm_common/thread_arch.c:273
+
+
+hit 134218769 00000108 T reset_handler_default  /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:77
+hit 134218877 00000016 T nmi_default    /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:117
+hit 134218965 00000376 T hard_fault_handler /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:198
+hit 134218893 00000072 T hard_fault_default /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:142
+hit 134219341 00000016 T mem_manage_default /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:318
+hit 134219357 00000016 T bus_fault_default  /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:323
+hit 134219373 00000016 T usage_fault_default    /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:328
+hit 134219389 00000016 T debug_mon_default  /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:333
+hit 134219405 00000016 T dummy_handler_default  /home/hauke/dev/riot/RIOT/cpu/cortexm_common/vectors_cortexm.c:339
+hit 134220317 00000028 T atomic_cas /home/hauke/dev/riot/RIOT/cpu/cortexm_common/atomic_arch.c:29
+hit 134220345 00000012 T panic_arch /home/hauke/dev/riot/RIOT/cpu/cortexm_common/panic.c:24
+hit 134221205 00000044 T cortexm_init   /home/hauke/dev/riot/RIOT/cpu/cortexm_common/cortexm_init.c:29
+
+hit 134219421 00000028 T uart_stdio_rx_cb   /home/hauke/dev/riot/RIOT/sys/uart_stdio/uart_stdio.c:64
+hit 134219449 00000020 T uart_stdio_init    /home/hauke/dev/riot/RIOT/sys/uart_stdio/uart_stdio.c:71
+hit 134219469 00000036 T uart_stdio_read    /home/hauke/dev/riot/RIOT/sys/uart_stdio/uart_stdio.c:76
+hit 134219505 00000020 T uart_stdio_write   /home/hauke/dev/riot/RIOT/sys/uart_stdio/uart_stdio.c:85
+
+hit 134219525 00000068 T board_init /home/hauke/dev/riot/RIOT/boards/iotlab-m3/board.c:26
+
+hit 134220357 00000188 T cpu_init   /home/hauke/dev/riot/RIOT/cpu/stm32f1/cpu.c:30
+hit 134220545 00000004 T lpm_arch_set   /home/hauke/dev/riot/RIOT/cpu/stm32f1/lpm_arch.c:30
+
+hit 134220549 00000152 T uart_init  /home/hauke/dev/riot/RIOT/cpu/stm32f1/periph/uart.c:40
+hit 134220701 00000028 T uart_write /home/hauke/dev/riot/RIOT/cpu/stm32f1/periph/uart.c:124
+hit 134220729 00000060 T isr_usart1 /home/hauke/dev/riot/RIOT/cpu/stm32f1/periph/uart.c:163
+hit 134220789 00000140 T gpio_init  /home/hauke/dev/riot/RIOT/cpu/stm32f1/periph/gpio.c:76
+hit 134220929 00000068 T gpio_init_af   /home/hauke/dev/riot/RIOT/cpu/stm32f1/periph/gpio.c:146
+hit 134220997 00000068 T isr_exti   /home/hauke/dev/riot/RIOT/cpu/stm32f1/periph/gpio.c:213
+
+hit 134221109 00000042 T tsrb_add_one   /home/hauke/dev/riot/RIOT/sys/tsrb/tsrb.c:52
+hit 134221065 00000044 T tsrb_get   /home/hauke/dev/riot/RIOT/sys/tsrb/tsrb.c:42
+
+hit 134221153 00000048 T main   /home/hauke/dev/riot/RIOT/examples/hello-world/main.c:24
+
+hit 134221201 00000002 T auto_init  /home/hauke/dev/riot/RIOT/sys/auto_init/auto_init.c:86
+
+hit 134221249 00000076 T __libc_init_array
+hit 134221325 00000048 T printf
+hit 134221373 00000240 T _puts_r
+hit 134221613 00000016 T puts
+hit 134223237 00000044 t __sfputc_r
+hit 134223281 00000036 T __sfputs_r
+hit 134223317 00000528 T _vfprintf_r
+hit 134223845 00000234 T _printf_common
+hit 134224081 00000576 T _printf_i
+hit 134221629 00000168 T __swbuf_r
+hit 134221797 00000216 T __swsetup_r
+hit 134222013 00000262 T __sflush_r
+hit 134222277 00000084 T _fflush_r
+hit 134222361 00000012 T _cleanup_r
+hit 134222373 00000072 t std.isra.0
+hit 134222445 00000044 T __sfmoreglue
+hit 134222489 00000096 T __sinit
+hit 134222585 00000116 T __sfp
+hit 134222761 00000152 T __smakebuf_r
+hit 134224791 00000028 T memchr
+hit 134222913 00000016 T memset
+hit 134222929 00000136 T _free_r
+hit 134223065 00000172 T _malloc_r
+hit 134224657 00000034 T __sread
+hit 134224691 00000056 T __swrite
+hit 134224747 00000036 T __sseek
+hit 134224783 00000008 T __sclose
+
+
+hit 134222701 00000060 T _fwalk_reent
+hit 134225644 00000004 T _global_impure_ptr
+hit 134221325 00000048 T iprintf
+hit 134225712 00000032 T __sf_fake_stderr
+hit 134225648 00000032 T __sf_fake_stdin
+hit 134225680 00000032 T __sf_fake_stdout
+hit 134223317 00000528 T _vfiprintf_r
+
+hit 134218721 00000004 T isr_pendsv /home/hauke/dev/riot/RIOT/cpu/cortexm_common/thread_arch.c:275
+hit 134218739 00000004 T isr_svc    /home/hauke/dev/riot/RIOT/cpu/cortexm_common/thread_arch.c:275

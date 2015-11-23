@@ -20,49 +20,103 @@ import sys
 from os import path
 import argparse
 import re
-import subprocess
+# import subprocess
 
 
-class Anasize():
+# class Anasize():
 
-    def __init__(self, elf_file, prefix):
-        self.elf = elf_file
-        self.prefix = prefix
-        self.obj = dict()
+#     def __init__(self, elf_file, prefix):
+#         self.elf = elf_file
+#         self.prefix = prefix
+#         self.obj = dict()
 
-    def parseFile(self):
-        dump = subprocess.check_output([
-            'nm',
-            '--radix=d',
-            '--print-size',
-            '--line-numbers',
-            '--size-sort',
-            self.elf])
+#     def parseFile(self):
+#         dump = subprocess.check_output([
+#             'nm',
+#             '--radix=d',
+#             '--print-size',
+#             '--line-numbers',
+#             # '--size-sort',
+#             '-C',
+#             self.elf])
 
-        i = 1
-        for line in dump.splitlines():
-            # print 'line ' + str(i) + ': ' + line
-            # i += 1
+#         text = 0
+#         data = 0
+#         bss = 0
 
-            if re.search(' [tT] ', line):
-                print 'hit ' + line
+#         for line in dump.splitlines():
+#             # print 'line ' + str(i) + ': ' + line
+#             # i += 1
 
-        # print dump
+#             if re.search(' [tT] ', line):
+#                 # print 'hit ' + line
+
+#                 res = re.match('\d+ (\d+)', line)
+#                 if (res):
+#                     print 'hit ' + line
+#                     if re.search('interrupt', line):
+#                         print "VECTOR " + line
+#                     text += int(res.group(1))
+#                 else:
+#                     # print("PPP " + line)
+#                     res = re.match('\d+$', line)
+#                     if (res):
+#                         print("empty line match")
+
+#             if re.search(' [dD] ', line):
+#                 # print 'hit ' + line
+#                 res = re.match('\d+ (\d+)', line)
+#                 if (res):
+#                     data += int(res.group(1))
+
+#             if re.search(' [bB] ', line):
+#                 # print 'hit ' + line
+#                 res = re.match('\d+ (\d+)', line)
+#                 if (res):
+#                     # if (int(res.group(1)) % 4):
+#                         # bss += 2
+#                         # print("BSS SYM < 4" + line)
+
+#                     bss += int(res.group(1))
+
+
+#         dec = text + data + bss
+#         print("   text    data     bss     dec     hex filename")
+#         print("%7i %7i %7i %7i %7x %s" % (text, data, bss, dec, dec, self.elf))
+
+#         sizedump = subprocess.check_output((self.prefix + 'size', self.elf))
+#         print '\n' + sizedump
 
 
 
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Define some command line args
     p = argparse.ArgumentParser()
-    p.add_argument("file", default='test.elf', nargs='?', help='ELF file to analyze')
-    p.add_argument("-p", default='', help='Toolchain prefix, e.g. arm-none-eabi-')
+    p.add_argument("file", default="test.elf", nargs="?", help="ELF file to analyze")
+    p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     args = p.parse_args()
 
     # Test if file exisists
     if not path.isfile(args.file):
-        sys.exit('Error: ELF file \'' + args.file + '\' does not exist')
+        sys.exit("Error: ELF file '" + args.file + "' does not exist")
+
+    f = open(args.file, 'r')
+
+    l = 0
+    for line in f:
+
+        if re.search("^ \.vectors", line):
+            print line
+
+        m = re.match(' *\.text\.([\._-a-zA-Z0-9]+)', line)
+        if m:
+            print("%s" % line)
+            l += 1
+
+    print(args.file + " contains %i lines" % l)
+
     # Analyze ELF file
-    ana = Anasize(args.file, args.p)
-    ana.parseFile()
+    # ana = Anasize(args.file, args.p)
+    # ana.parseFile()

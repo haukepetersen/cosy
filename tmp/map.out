@@ -1,0 +1,115 @@
+ .vectors                               0x08000000      0x130 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cpu/vectors.o
+ .text.dummy_handler                    0x080001ae        0x4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cpu/vectors.o
+
+ .text._init                            0x08000130        0x4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+ .text._sbrk_r                          0x08000134       0x3c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+ .text._read_r                          0x08000170        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+ .text._write_r                         0x08000178        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+ .text._close_r                         0x08000180        0xa /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+ .text._lseek_r                         0x0800018a        0xa /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+ .text._fstat_r                         0x08000194        0xa /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+ .text._isatty_r                        0x0800019e       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/newlib/syscalls.o
+
+ .text.sched_run                        0x080001b4       0x5c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(sched.o)
+ .text.sched_set_status                 0x08000210       0x68 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(sched.o)
+ .text.sched_switch                     0x08000278       0x34 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(sched.o)
+ .text.sched_task_exit                  0x080002ac       0x3c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(sched.o)
+ .text.bitarithm_lsb                    0x080002e8       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(bitarithm.o)
+ .text.clist_add                        0x080002f8       0x2a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(clist.o)
+ .text.clist_remove                     0x08000322       0x1c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(clist.o)
+ .text.main_trampoline                  0x08000754       0x18 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(kernel_init.o)
+ .text.idle_thread                      0x0800076c       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(kernel_init.o)
+ .text.kernel_init                      0x08000780       0x58 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(kernel_init.o)
+ .text.atomic_set_to_one                0x080007d8       0x1c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(mutex.o)
+ .text.mutex_lock                       0x080007f4       0x58 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(mutex.o)
+ .text.mutex_unlock                     0x0800084c       0x3e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(mutex.o)
+ .text.core_panic                       0x0800088c       0x44 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(panic.o)
+ .text.priority_queue_remove_head       0x080008d0        0xc /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(priority_queue.o)
+ .text.priority_queue_add               0x080008dc       0x1e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(priority_queue.o)
+ .text.thread_yield                     0x080008fc       0x34 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(thread.o)
+ .text.thread_create                    0x08000930       0xf8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/core.a(thread.o)
+
+ .text.irq_arch_disable                 0x0800033e        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(irq_arch.o)
+ .text.irq_arch_enable                  0x08000346        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(irq_arch.o)
+ .text.irq_arch_restore                 0x0800034e        0x6 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(irq_arch.o)
+ .text.irq_arch_in                      0x08000354        0x8 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(irq_arch.o)
+ .text.thread_arch_stack_init           0x0800035c       0x6c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(thread_arch.o)
+ .text.thread_arch_start_threading      0x080003c8        0xa /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(thread_arch.o)
+ .text.thread_arch_yield                0x080003d4       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(thread_arch.o)
+ .text.arch_context_switch              0x080003e4       0x2c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(thread_arch.o)
+ .text.pre_startup                      0x08000410        0x2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.post_startup                     0x08000412        0x2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.reset_handler_default            0x08000414       0x6c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.nmi_default                      0x08000480       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.hard_fault_default               0x08000490       0x50 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.hard_fault_handler               0x080004e0      0x178 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.mem_manage_default               0x08000658       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.bus_fault_default                0x08000668       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.usage_fault_default              0x08000678       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.debug_mon_default                0x08000688       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.dummy_handler_default            0x08000698       0x10 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(vectors_cortexm.o)
+ .text.atomic_cas                       0x08000a28       0x1e /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(atomic_arch.o)
+ .text.panic_arch                       0x08000a46        0xc /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(panic.o)
+ .text.cortexm_init                     0x08000dac       0x2c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cortexm_common.a(cortexm_init.o)
+
+ .text.uart_stdio_rx_cb                 0x080006a8       0x1c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/uart_stdio.a(uart_stdio.o)
+ .text.uart_stdio_init                  0x080006c4       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/uart_stdio.a(uart_stdio.o)
+ .text.uart_stdio_read                  0x080006d8       0x24 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/uart_stdio.a(uart_stdio.o)
+ .text.uart_stdio_write                 0x080006fc       0x14 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/uart_stdio.a(uart_stdio.o)
+
+ .text.board_init                       0x08000710       0x44 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/iotlab-m3_base.a(board.o)
+
+ .text.cpu_init                         0x08000a54       0xbc /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cpu.a(cpu.o)
+ .text.lpm_arch_set                     0x08000b10        0x4 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/cpu.a(lpm_arch.o)
+
+ .text.uart_init                        0x08000b14       0x98 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/periph.a(uart.o)
+ .text.uart_write                       0x08000bac       0x20 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/periph.a(uart.o)
+ .text.isr_usart1                       0x08000bcc       0x3c /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/periph.a(uart.o)
+ .text.gpio_init                        0x08000c08       0x94 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/periph.a(gpio.o)
+ .text.gpio_init_af                     0x08000c9c       0x48 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/periph.a(gpio.o)
+.text.isr_exti                          0x08000ce4       0x44 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/periph.a(gpio.o)
+
+ .text.tsrb_get                         0x08000d28       0x2a /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/tsrb.a(tsrb.o)
+ .text.tsrb_add_one                     0x08000d52       0x26 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/tsrb.a(tsrb.o)
+
+ .text.startup.main                     0x08000d78       0x30 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/hello-world.a(main.o)
+
+ .text.auto_init                        0x08000da8        0x2 /home/hauke/dev/riot/RIOT/examples/hello-world/bin/iotlab-m3/auto_init.a(auto_init.o)
+
+ .text.__libc_init_array                0x08000dd8       0x4c /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-init.o)
+ .text.printf                           0x08000e24       0x30 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-printf.o)
+ .text._puts_r                          0x08000e54       0xc0 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-puts.o)
+ .text.puts                             0x08000f14       0x10 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-puts.o)
+ .text.__sfputc_r                       0x08000f24       0x2c /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-vfprintf.o)
+ .text.__sfputs_r                       0x08000f50       0x24 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-vfprintf.o)
+ .text._vfprintf_r                      0x08000f74      0x208 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-vfprintf.o)
+ .text._printf_common                   0x0800117c       0xe4 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-vfprintf_i.o)
+ .text._printf_i                        0x08001260      0x228 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-vfprintf_i.o)
+ .text.__swbuf_r                        0x08001488       0xa8 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-wbuf.o)
+ .text.__swsetup_r                      0x08001530       0xdc /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-wsetup.o)
+ .text.__sflush_r                       0x0800160c      0x106 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-fflush.o)
+ .text._fflush_r                        0x08001714       0x54 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-fflush.o)
+ .text._cleanup_r                       0x08001768       0x32 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-findfp.o)
+ .text.std.isra.0                       0x0800179c       0x48 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-findfp.o)
+ .text.__sfmoreglue                     0x080017e4       0x2c /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-findfp.o)
+ .text.__sinit                          0x08001810       0x60 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-findfp.o)
+ .text.__sfp                            0x08001870       0x74 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-findfp.o)
+ .text.__smakebuf_r                     0x080018e4       0x98 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-makebuf.o)
+ .text.memchr                           0x0800197c       0x1c /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-memchr-stub.o)
+ .text.memset                           0x08001998       0x10 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-memset.o)
+ .text._free_r                          0x080019a8       0x88 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-nano-freer.o)
+ .text._malloc_r                        0x08001a30       0xa8 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-nano-mallocr.o)
+ .text.__sread                          0x08001ad8       0x22 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-stdio.o)
+ .text.__swrite                         0x08001afa       0x38 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-stdio.o)
+ .text.__sseek                          0x08001b32       0x24 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-stdio.o)
+ .text.__sclose                         0x08001b56        0x8 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-stdio.o)
+ .text.strlen                           0x08001b5e       0x10 /home/hauke/tools/gcc-arm-none-eabi-4_8-2014q3/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/libc_s.a(lib_a-strlen.o)
+
+ *fill*                                 0x0800088a        0x2
+ *fill*                                 0x080001b2        0x2
+ *fill*                                 0x080003d2        0x2
+ *fill*                                 0x080008fa        0x2
+ *fill*                                 0x08000a52        0x2
+ *fill*                                 0x08000daa        0x2
+ *fill*                                 0x08001712        0x2
+ *fill*                                 0x0800179a        0x2
