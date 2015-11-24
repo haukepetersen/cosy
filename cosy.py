@@ -107,12 +107,12 @@ if __name__ == "__main__":
     l = 0
     for line in f:
 
-        if re.search("^ \.vectors", line):
-            print line
+        if re.match("^ \.vectors", line):
+            print "####" + line,
 
         m = re.match(' *\.text\.([\._-a-zA-Z0-9]+)', line)
         if m:
-            print("%s" % line)
+            print line,
             l += 1
 
     print(args.file + " contains %i lines" % l)
