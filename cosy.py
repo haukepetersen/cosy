@@ -22,74 +22,6 @@ import argparse
 import re
 import subprocess
 
-
-# class Anasize():
-
-#     def __init__(self, elf_file, prefix):
-#         self.elf = elf_file
-#         self.prefix = prefix
-#         self.obj = dict()
-
-#     def parseFile(self):
-#         dump = subprocess.check_output([
-#             'nm',
-#             '--radix=d',
-#             '--print-size',
-#             '--line-numbers',
-#             # '--size-sort',
-#             '-C',
-#             self.elf])
-
-#         text = 0
-#         data = 0
-#         bss = 0
-
-#         for line in dump.splitlines():
-#             # print 'line ' + str(i) + ': ' + line
-#             # i += 1
-
-#             if re.search(' [tT] ', line):
-#                 # print 'hit ' + line
-
-#                 res = re.match('\d+ (\d+)', line)
-#                 if (res):
-#                     print 'hit ' + line
-#                     if re.search('interrupt', line):
-#                         print "VECTOR " + line
-#                     text += int(res.group(1))
-#                 else:
-#                     # print("PPP " + line)
-#                     res = re.match('\d+$', line)
-#                     if (res):
-#                         print("empty line match")
-
-#             if re.search(' [dD] ', line):
-#                 # print 'hit ' + line
-#                 res = re.match('\d+ (\d+)', line)
-#                 if (res):
-#                     data += int(res.group(1))
-
-#             if re.search(' [bB] ', line):
-#                 # print 'hit ' + line
-#                 res = re.match('\d+ (\d+)', line)
-#                 if (res):
-#                     # if (int(res.group(1)) % 4):
-#                         # bss += 2
-#                         # print("BSS SYM < 4" + line)
-
-#                     bss += int(res.group(1))
-
-
-#         dec = text + data + bss
-#         print("   text    data     bss     dec     hex filename")
-#         print("%7i %7i %7i %7i %7x %s" % (text, data, bss, dec, dec, self.elf))
-
-
-
-
-
-
-
 if __name__ == "__main__":
     # Define some command line args
     p = argparse.ArgumentParser()
@@ -106,6 +38,8 @@ if __name__ == "__main__":
     f = open(args.file, 'r')
 
     l = 0
+
+    root = {'name': 'RIOT', 't': 0, 'd': 0, 'b': 0, 'children': []}
 
     mem_t = dict()
     mem_t['target'] = 0
@@ -124,41 +58,38 @@ if __name__ == "__main__":
 
     state = ''
 
-    mem = {}
     cur_symbol = ''
+    cur_size = 0
+    cur_path = ''
+    sym_names = []
+
+    mem = {}
 
     for line in f:
 
         m = re.match("^\.text +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
         if m:
-            mem_t['target'] = int(m.group(1), 16)
-            # state = 'text'
-            mem = mem_t
+            mem = root['t']
             continue
 
         m = re.match("^\.bss +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
         if m:
-            mem_b['target'] = int(m.group(1), 16)
-            # state = 'bss'
-            mem = mem_b
-            continue
-
-        m = re.match("^\.(relocate|data) +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
-        if m:
-            mem_d['target'] += int(m.group(2), 16)
-            # state = 'data'
-            mem = mem_d
+            mem = root['b']
             continue
 
         m = re.match("^\.stack +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
         if m:
-            mem_b['target'] += int(m.group(1), 16)
-            mem = mem_b
+            mem = root['b']
             continue
+
+        m = re.match("^\.(relocate|data) +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
+        if m:
+            mem = root['d']
+            continue
+
 
         m = re.match("^\.[a-z0-9]+", line)
         if m:
-            # state = ''
             mem = {}
             continue
 
@@ -166,27 +97,33 @@ if __name__ == "__main__":
         if mem:
             m = re.match("^ *\*fill\* +0x[0-9a-z]+ +0x([0-9a-z])+", line)
             if m:
-                mem['fill'] += int(m.group(1), 16)
+                mem += int(m.group(1), 16)
 
             m = re.match(" (\.[-_\.A-Za-z0-9]+)", line)
             if m:
+                if sym_names:
+                    print "FOUND:" + cur_symbol + " (" + str(cur_size) + ") " + cur_path
+                    print sym_names
+                    sym_names = []
+
                 cur_symbol = m.group(1)
 
-            m = re.match(".+0x[0-9a-f]+ +0x([0-9a-f]+)", line)
+
+
+            m = re.match(".+0x[0-9a-f]+ +0x([0-9a-f]+) (/.+)$", line)
             if m:
-                mem['sum'] += int(m.group(1), 16)
+                cur_size = int(m.group(1), 16)
+                mem += int(m.group(1), 16)
+                cur_path = m.group(2)
+                continue
+
+            m = re.match(" +0x[0-9a-f]+ +([-_a-zA-Z0-9]+)$", line)
+            if m:
+                sym_names.append(m.group(1))
 
 
 
-    print(args.file + " contains %i lines" % l)
-
-    # Analyze ELF file
-    # ana = Anasize(args.file, args.p)
-    # ana.parseFile()
-
-    print("text - target: %i, sum: %i, fill: %i" % (mem_t['target'], mem_t['sum'], mem_t['fill']))
-    print("data - target: %i, sum: %i, fill: %i" % (mem_d['target'], mem_d['sum'], mem_d['fill']))
-    print("bss  - target: %i, sum: %i, fill: %i" % (mem_b['target'], mem_b['sum'], mem_b['fill']))
+    print("text - text: %i, data: %i, bss: %i" % (root['t'], root['d'], root['b']))
     print ""
 
     # DEGBUG: output size results
