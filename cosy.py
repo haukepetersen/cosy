@@ -35,6 +35,24 @@ if __name__ == "__main__":
         sys.exit("Error: ELF file '" + args.file + "' does not exist")
 
 
+    symbols = {}
+
+    dump = subprocess.check_output([
+        'nm',
+        '--line-numbers',
+        args.elf])
+
+    for line in dump.splitlines():
+        m = re.match("([0-9a-f]+) [a-zA-Z] ([_a-zA-Z0-9]+)[ \t]+.+/(RIOT/.+):(\d+)$", line)
+        if m:
+            symbols[m.group(2)] = {
+                'addr': m.group(1),
+                'path': m.group(3),
+                'line': int(m.group(4)),
+            }
+
+
+
     f = open(args.file, 'r')
 
     l = 0
@@ -69,22 +87,26 @@ if __name__ == "__main__":
 
         m = re.match("^\.text +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
         if m:
-            mem = root['t']
+            mem = mem_t
+            mem['target'] = int(m.group(1), 16)
             continue
 
         m = re.match("^\.bss +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
         if m:
-            mem = root['b']
+            mem = mem_b
+            mem['target'] += int(m.group(1), 16)
             continue
 
         m = re.match("^\.stack +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
         if m:
-            mem = root['b']
+            mem = mem_b
+            mem['target'] += int(m.group(1), 16)
             continue
 
         m = re.match("^\.(relocate|data) +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
         if m:
-            mem = root['d']
+            mem = mem_d
+            mem['target'] = int(m.group(2), 16)
             continue
 
 
@@ -97,13 +119,32 @@ if __name__ == "__main__":
         if mem:
             m = re.match("^ *\*fill\* +0x[0-9a-z]+ +0x([0-9a-z])+", line)
             if m:
-                mem += int(m.group(1), 16)
+                mem['fill'] += int(m.group(1), 16)
+                mem['sum'] += int(m.group(1), 16)
 
             m = re.match(" (\.[-_\.A-Za-z0-9]+)", line)
             if m:
+
                 if sym_names:
-                    print "FOUND:" + cur_symbol + " (" + str(cur_size) + ") " + cur_path
-                    print sym_names
+
+
+                    # print "FOUND:" + cur_symbol + " (" + str(cur_size) + ") " + cur_path
+                    # print sym_names
+                    sym = re.match(".*\.([-_a-zA-Z0-9]+)", cur_symbol)
+                    if sym:
+                        if sym.group(1) not in symbols:
+                            print sym.group(1) + " is new!"
+                        else:
+                            print "--- found " + sym.group(1) + " size: " + str(cur_size)
+                            print "----      " + symbols[sym.group(1)]['path']
+                    else:
+                        print "NO MATCH: " + cur_symbol
+
+                    for sym in sym_names:
+                        # print sym
+                        if sym in symbols:
+                            print "+++ found " + sym
+
                     sym_names = []
 
                 cur_symbol = m.group(1)
@@ -113,7 +154,7 @@ if __name__ == "__main__":
             m = re.match(".+0x[0-9a-f]+ +0x([0-9a-f]+) (/.+)$", line)
             if m:
                 cur_size = int(m.group(1), 16)
-                mem += int(m.group(1), 16)
+                mem['sum'] += int(m.group(1), 16)
                 cur_path = m.group(2)
                 continue
 
@@ -123,7 +164,9 @@ if __name__ == "__main__":
 
 
 
-    print("text - text: %i, data: %i, bss: %i" % (root['t'], root['d'], root['b']))
+    print("text - target: %i, sum: %i, fill: %i" % (mem_t['target'], mem_t['sum'], mem_t['fill']))
+    print("data - target: %i, sum: %i, fill: %i" % (mem_d['target'], mem_d['sum'], mem_d['fill']))
+    print("bss  - target: %i, sum: %i, fill: %i" % (mem_b['target'], mem_b['sum'], mem_b['fill']))
     print ""
 
     # DEGBUG: output size results
