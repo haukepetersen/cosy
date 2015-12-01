@@ -21,6 +21,52 @@ from os import path
 import argparse
 import re
 import subprocess
+import copy
+
+def add_sym( target, sym ):
+    if sym and (sym['addr'] != 0 or sym['sym'] == 'vectors'):
+        target.append(copy.deepcopy(sym))
+
+def size_init():
+    return {'t': 0, 'd': 0, 'b': 0, 'sum': 0}
+
+def size_add( obj, sym ):
+    obj[sym['type']] += sym['size']
+    obj['sum'] += sym['size']
+
+def print_shead():
+    print("%-60s %7s %7s %7s %7s %7s" % ("module", "text", "data", "bss", "dec", "hex"))
+    print("------------------------------------------------------------------------------------------")
+
+def print_mod( name, size ):
+    print("%-60s %7i %7i %7i %7i %7x" % (name, size['t'], size['d'], size['b'], size['sum'], size['sum']))
+
+def print_sum( obj ):
+    print("------------------------------------------------------------------------------------------")
+    print_mod("SUM", obj)
+    print("------------------------------------------------------------------------------------------")
+    print ""
+
+def print_size( obj ):
+    print("   text    data     bss     dec     hex")
+    print("%7i %7i %7i %7i %7x" % (obj['t'], obj['d'], obj['b'], obj['sum'], obj['sum']))
+
+def print_tree( depth, tree ):
+    print_shead()
+    print_subtree(depth, tree, 0)
+    print_sum(tree['size'])
+
+
+def print_subtree( depth, tree, cur ):
+    if depth:
+        for t in tree:
+            if t != 'size':
+                ind = ""
+                for i in range(0, cur):
+                    ind += ".... "
+                print_mod( ind + t, tree[t]['size'])
+                print_subtree( depth - 1, tree[t], cur + 1)
+
 
 if __name__ == "__main__":
     # Define some command line args
@@ -35,134 +81,214 @@ if __name__ == "__main__":
         sys.exit("Error: ELF file '" + args.file + "' does not exist")
 
 
-    symbols = {}
-
-    dump = subprocess.check_output([
-        'nm',
-        '--line-numbers',
-        args.elf])
-
+    nm_out = []
+    dump = subprocess.check_output(['nm', '--line-numbers', args.elf])
     for line in dump.splitlines():
-        m = re.match("([0-9a-f]+) ([tbdTDB]) ([_a-zA-Z0-9]+)[ \t]+.+/(RIOT/.+):(\d+)$", line)
+        m = re.match("([0-9a-f]+) ([tbdTDB]) ([_a-zA-Z0-9]+)[ \t]+.+/RIOT/(.+)/([-_a-zA-Z0-9]+\.[ch]):(\d+)$", line)
         if m:
-            symbols[m.group(3)] = {
+            nm_out.append({
+                'sym': m.group(3),
+                'path': m.group(4).split('/'),
+                'file': m.group(5),
+                'line': int(m.group(6)),
+                'addr': int(m.group(1), 16),
                 'type': m.group(2).lower(),
-                'addr': m.group(1),
-                'line': int(m.group(5)),
-                'size': 0,
-                'path': m.group(4),
-            }
+                'arcv': '',
+                'obj': '',
+                'size': -1,
+                'alias': []
+                })
 
 
-
-
-
-
-    targets = {'t': 0, 'd': 0, 'b': 0}
-
+    map_out = []
     cur_type = ''
-    cur_sect = ''
-    cur_addr = 0
-    cur_size = 0
-    cur_obj = ''
-    cur_arc = ''
-    cur_alias = []
-
+    cur_sym = {}
     f = open(args.file, 'r')
     for line in f:
 
-        m = re.match("^\.text +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
-        if m:
-            targets['t'] += int(m.group(1), 16)
+        if re.match("^\.text", line):
             cur_type = 't'
             continue
 
-        m = re.match("^\.bss +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
-        if m:
-            targets['b'] += int(m.group(1), 16)
+        if re.match("^\.(bss|stack)", line):
             cur_type = 'b'
             continue
 
-        m = re.match("^\.stack +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
-        if m:
-            targets['b'] += int(m.group(1), 16)
-            cur_type = 'b'
-            continue
-
-        m = re.match("^\.(relocate|data) +0x[0-9a-f]+ +0x([0-9a-f]+)", line)
-        if m:
-            targets['d'] += int(m.group(2), 16)
+        if re.match("^\.(relocate|data)", line):
             cur_type = 'd'
             continue
 
-        m = re.match("^\.[a-z0-9]+", line)
-        if m:
-            cur_type = ''
-            continue
+        if re.match("^OUTPUT.+", line):
+            add_sym(map_out, cur_sym)
+            break;
 
 
         if cur_type:
             # fill bytes?
-            m = re.match("^ *\*fill\* +0x[0-9a-f]+ +0x([0-9a-f])+", line)
+            m = re.match("^ *\*fill\* +0x([0-9a-f]+) +0x([0-9a-f])+", line)
             if m:
-                if "fill_" + cur_type in symbols:
-                    symbols["fill_" + cur_type]['size'] += int(m.group(1), 16)
-                else:
-                    symbols["fill_" + cur_type] = {'size': int(m.group(1), 16), 'type': cur_type}
-                continue
+                add_sym(map_out, cur_sym)
+                cur_sym = {
+                    'sym': 'fill',
+                    'path': '',
+                    'file': '',
+                    'line': -1,
+                    'addr': int(m.group(1), 16),
+                    'type': cur_type,
+                    'size': int(m.group(2), 16),
+                    'arcv': '',
+                    'obj': '',
+                    'alias': []
+                    }
+                # map_out.append(copy.deepcopy(cur_sym))
+                continue;
 
             # start of a new symbol
-            m = re.match(" (\.[-_\.A-Za-z0-9]+)", line)
+            m = re.match(" \.([a-z]+\.)?([-_\.A-Za-z0-9]+)", line)
             if m:
+                # save last symbol
+                add_sym(map_out, cur_sym)
+                # reset current symbol
+                cur_sym = {
+                    'sym': m.group(2),
+                    'path': '',
+                    'file': '',
+                    'line': -1,
+                    'addr': 0,
+                    'type': cur_type,
+                    'size': -1,
+                    'arcv': '',
+                    'obj': '',
+                    'alias': []
+                    }
 
-                # process last symbol
-                if cur_sect:
-                    if len(cur_alias) == 1:
-                        name = cur_alias[0]
-                        print "NAME " + name
-                    else:
-                        print "there are " + str(len(cur_alias)) + " aliases for " + cur_sect
-
-                    sym = re.match(".*\.([-_a-zA-Z0-9]+)", cur_sect)
-                    if sym:
-                        if sym.group(1) not in symbols:
-                            print sym.group(1) + " is new!"
-                        # else:
-                            # print "--- found " + sym.group(1) + " size: " + str(cur_size)
-                            # print "----      " + symbols[sym.group(1)]['path']
-                    else:
-                        print("ERROR ERROR")
-
-                    # for sym in sym_names:
-                    #     # print sym
-                    #     if sym in symbols:
-                    #         print "+++ found " + sym
-                    cur_alias = []
-
-                cur_sect = m.group(1)
-
+            # get size, addr and path of current symbol
             m = re.match(".+0x([0-9a-f]+) +0x([0-9a-f]+) (/.+)$", line)
             if m:
-                cur_addr = int(m.group(1), 16)
-                cur_size = int(m.group(2), 16)
-                cur_arc = m.group(3)
+                cur_sym['addr'] = int(m.group(1), 16)
+                cur_sym['size'] = int(m.group(2), 16)
+                # get object and archive files
+                me = re.match(".+/([-_a-zA-Z0-9]+\.a)\(([-_a-zA-Z0-9]+\.o)\)$", m.group(3))
+                if me:
+                    cur_sym['arcv'] = me.group(1)
+                    cur_sym['obj'] = me.group(2)
+                me = re.match(".+/([-_a-zA-Z0-9]+\.o)$", m.group(3))
+                if me:
+                    cur_sym['arcv'] = ''
+                    cur_sym['obj'] = me.group(1)
                 continue
 
             m = re.match(" +0x[0-9a-f]+ +([-_a-zA-Z0-9]+)$", line)
             if m:
-                cur_alias.append(m.group(1))
+                cur_sym['alias'].append(m.group(1))
+
+
+
+
+
+
+    wp = []
+    for sym in map_out:
+        if not sym['path']:
+            wp.append(sym)
+    print("Without path: %i" % len(wp))
+
+
+    # get paths from nm-dump output
+    for nm in nm_out:
+        for m in map_out:
+            if (nm['addr'] & 0xfffffffe) == m['addr']:
+                m['path'] = nm['path']
+
+    # fill in some known paths
+    for sym in map_out:
+        if sym['arcv'] == 'libc_s.a':
+            sym['path'] = ['newlib', 'libc']
+        elif sym['arcv'] == 'libgcc.a':
+            sym['path'] = ['newlib', 'libgcc']
+        elif sym['sym'] == 'fill':
+            sym['path'] = ['fill']
+
+    # try to map .a and .o files to known paths
+    otp = {}
+    for sym in map_out:
+        if sym['arcv'] and sym['path'] and sym['arcv'] not in otp:
+            otp[sym['arcv']] = sym['path']
+    for sym in map_out:
+        if not sym['path'] and sym['arcv'] and sym['arcv'] in otp:
+            sym['path'] = otp[sym['arcv']]
+
+    wp = []
+    for sym in map_out:
+        if not sym['path']:
+                wp.append(sym)
+                # print("%30s: a:%s, o:%s" % (sym['sym'], sym['arcv'], sym['obj']))
+    print("Without path: %i" % len(wp))
+
+
+
+
+    # print sizes on archive file base
+    sa = dict()
+    sm = size_init()
+    for sym in map_out:
+        if sym['arcv']:
+            k = sym['arcv']
+        elif sym['obj']:
+            k = sym['obj']
+        else:
+            k = sym['sym']
+
+        if k not in sa:
+            sa[k] = size_init()
+        size_add(sa[k], sym)
+        size_add(sm, sym)
+
+    print_shead()
+    for a in sorted(sa):
+        print_mod(a, sa[a])
+    print_sum(sm)
+
+
+
+    # print sizes on module (riot folder) base
+    sa = {'size': size_init()}
+    for sym in map_out:
+        size_add(sa['size'], sym)
+        tmp = sa
+        for d in sym['path']:
+            if d not in tmp:
+                tmp[d] = {'size': size_init()}
+            size_add(tmp[d]['size'], sym)
+            tmp = tmp[d]
+        # add symbol as leaf
+        if sym['sym'] not in tmp:
+            tmp[sym['sym']] = {'size': size_init()}
+        size_add(tmp[sym['sym']]['size'], sym)
+
+    print_tree(10, sa)
+
+
+    # print_shead()
+    # for a in sorted(sa):
+    #     print_mod(a, sa[a]['size'])
+    #     for b in sorted(sa[a]):
+    #         if b != 'size':
+    #             print_mod(a + '/' + b, sa[a][b]['size'])
+    #     print ""
+
+    # print_sum(sm)
+
+
+
+
+
 
     res = {'t': 0, 'd': 0, 'b': 0, 'sum': 0}
-
-    for key in symbols:
-        res[symbols[key]['type']] += symbols[key]['size']
-        res['sum'] += symbols[key]['size']
-
-    print("targets:")
-    print("text: %i, data: %i, bss: %i" % (targets['t'], targets['d'], targets['b']))
-    print("restuls:")
-    print("text: %i, data: %i, bss: %i, sum: %i" % (res['t'], res['d'], res['b'], res['sum']))
-
+    for sym in map_out:
+        res[sym['type']] += sym['size']
+        res['sum'] += sym['size']
+    print_size(res)
 
     # DEGBUG: output size results
     print subprocess.check_output((args.p + 'size', args.elf)),
