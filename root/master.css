@@ -1,0 +1,121 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+#main {
+  float: left;
+  width: 750px;
+}
+
+#sidebar {
+  float: right;
+  width: 100px;
+}
+
+#table {
+  float: right;
+  width: 500px;
+}
+
+#table > div {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+#table div:hover {
+  border-bottom: 1px solid #000;
+  color: #333;
+}
+
+#table > div.l1 {
+  background-color: #f0f0f0;
+  padding-left: 10px;
+}
+#table > div.l2 {
+  background-color: #ececec;
+  padding-left: 20px;
+}
+#table > div.l3 {
+  background-color: #e8e8e8;
+  padding-left: 30px;
+}
+#table > div.l4 {
+  background-color: #e4e4e4;
+  padding-left: 40px;
+}
+#table > div.l5 {
+  background-color: #e0e0e0;
+  padding-left: 50px;
+}
+#table > div.l6 {
+  background-color: #dcdcdc;
+  padding-left: 60px;
+}
+#table > div.l7 {
+  background-color: #d8d8d8;
+  padding-left: 70px;
+}
+#table > div.l8 {
+  background-color: #d4d4d4;
+  padding-left: 80px;
+}
+
+#table > div > div {
+  width: 100px;
+  float: right;
+}
+
+#sequence {
+  width: 900px;
+  height: 50px;
+  margin: 10px 0 10px 0;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+
+#sequence text, #legend text {
+  position: absolute;
+  font-weight: 600;
+  fill: #fff;
+  text-align: right;
+}
+
+#chart {
+  width: 900px;
+  height: 900px;
+  position: relative;
+}
+
+#chart path {
+  stroke: #fff;
+}
+
+#explanation {
+  position: absolute;
+  top: 400px;
+  left: 300px;
+  width: 300px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #666;
+  z-index: -1;
+}
+
+#explanation > span {
+  display: block;
+}
+
+#expl_per, #expl_size {
+  font-size: 1.6em;
+}
+
+#sidebar, #chart, #sequence, #table {
+  border: 0px solid red;
+}

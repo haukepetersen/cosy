@@ -71,18 +71,23 @@ def print_subtree( depth, tree, cur ):
 if __name__ == "__main__":
     # Define some command line args
     p = argparse.ArgumentParser()
-    p.add_argument("file", default="test.map", nargs="?", help="MAP file")
-    p.add_argument("elf", default="test.elf", nargs="?", help="ELF file")
+    p.add_argument("file", default="test", nargs="?", help="base file name, .map and .elf will be added")
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     args = p.parse_args()
 
+    elffile = args.file + ".elf"
+    mapfile = args.file + ".map"
+
     # Test if file exisists
-    if not path.isfile(args.file):
-        sys.exit("Error: ELF file '" + args.file + "' does not exist")
+    if not path.isfile(elffile):
+        sys.exit("Error: ELF file '" + elffile + "' does not exist")
+    if not path.isfile(mapfile):
+        sys.exit("Error: MAP file '" + mapfile + "' does not exist")
+
 
 
     nm_out = []
-    dump = subprocess.check_output(['nm', '--line-numbers', args.elf])
+    dump = subprocess.check_output(['nm', '--line-numbers', elffile])
     for line in dump.splitlines():
         m = re.match("([0-9a-f]+) ([tbdTDB]) ([_a-zA-Z0-9]+)[ \t]+.+/RIOT/(.+)/([-_a-zA-Z0-9]+\.[ch]):(\d+)$", line)
         if m:
@@ -103,7 +108,7 @@ if __name__ == "__main__":
     map_out = []
     cur_type = ''
     cur_sym = {}
-    f = open(args.file, 'r')
+    f = open(mapfile, 'r')
     for line in f:
 
         if re.match("^\.text", line):
@@ -181,6 +186,7 @@ if __name__ == "__main__":
             m = re.match(" +0x[0-9a-f]+ +([-_a-zA-Z0-9]+)$", line)
             if m:
                 cur_sym['alias'].append(m.group(1))
+    f.close()
 
 
 
@@ -279,6 +285,19 @@ if __name__ == "__main__":
 
     # print_sum(sm)
 
+    files = {
+        't': open('root/mem_t.csv', 'w'),
+        'd': open('root/mem_d.csv', 'w'),
+        'b': open('root/mem_b.csv', 'w'),
+        'sum': open('root/mem_sum.csv', 'w')
+        }
+    for sym in map_out:
+        line = ";".join(sym['path']) + ";" + sym['sym'] + "," + str(sym['size']) + '\n'
+        files[sym['type']].write(line)
+        files['sum'].write(line)
+    for t in files:
+        files[t].close()
+
 
 
 
@@ -291,4 +310,4 @@ if __name__ == "__main__":
     print_size(res)
 
     # DEGBUG: output size results
-    print subprocess.check_output((args.p + 'size', args.elf)),
+    print subprocess.check_output((args.p + 'size', elffile)),

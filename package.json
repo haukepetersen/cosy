@@ -1,0 +1,13 @@
+{
+  "name": "CosyVis",
+  "version": "0.1.0",
+  "description": "Code size visualization server",
+  "main": "server.js",
+  "repository": "",
+  "author": "Hauke Petersen <devel@haukepetersen.de",
+  "license": "GPLv2",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "express": "*"
+  }
+}
