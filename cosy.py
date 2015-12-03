@@ -22,6 +22,7 @@ import argparse
 import re
 import subprocess
 import copy
+import json
 
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 
@@ -154,10 +155,12 @@ if __name__ == "__main__":
             cur_type = 'd'
             continue
 
+        # if re.match("^\..+", line):
         if re.match("^OUTPUT.+", line):
             add_sym(map_out, cur_sym)
+            cur_type = ''
+            # continue
             break;
-
 
         if cur_type:
             # fill bytes?
@@ -306,31 +309,8 @@ if __name__ == "__main__":
     print_tree(10, sa)
 
 
-    # print_shead()
-    # for a in sorted(sa):
-    #     print_mod(a, sa[a]['size'])
-    #     for b in sorted(sa[a]):
-    #         if b != 'size':
-    #             print_mod(a + '/' + b, sa[a][b]['size'])
-    #     print ""
-
-    # print_sum(sm)
-
-    files = {
-        't': open('root/mem_t.csv', 'w'),
-        'd': open('root/mem_d.csv', 'w'),
-        'b': open('root/mem_b.csv', 'w'),
-        'sum': open('root/mem_sum.csv', 'w')
-        }
-    for sym in map_out:
-        line = ";".join(sym['path']) + ";" + sym['sym'] + "," + str(sym['size']) + '\n'
-        files[sym['type']].write(line)
-        files['sum'].write(line)
-    for t in files:
-        files[t].close()
-
-
-
+    with open("root/symbols.json", 'w') as f:
+        json.dump(map_out, f, indent = 4)
 
 
 

@@ -46,7 +46,10 @@ var totalSize = 0;
 
 var vis;
 
-var tree;
+// the complete dataset
+var dataset;
+
+var cur_view;
 
 var partition = d3.layout.partition()
     .size([2 * Math.PI, radius * radius])
@@ -58,46 +61,25 @@ var arc = d3.svg.arc()
     .innerRadius(function(d) { return Math.sqrt(d.y); })
     .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
 
-function load(inputfile) {
-  // Use d3.text and d3.csv.parseRows so that we do not need to have a header
-  // row, and can receive the csv as an array of arrays.
-  d3.text(inputfile, function(text) {
-  // d3.text("visit-sequences.csv", function(text) {
-    var csv = d3.csv.parseRows(text);
-    tree = buildHierarchy(csv);
-    createVisualization(tree);
-  });
-}
-
-// Main function to draw and set up the visualization, once we have the data.
-function createVisualization(data) {
-
+function createVisualization() {
     // Basic setup of page elements.
     initializeBreadcrumbTrail();
     drawLegend();
-    // d3.select("#togglelegend").on("click", toggleLegend);
-    // toggleLegend();
 
+    d3.select("#btnExport").on("click", exportstuff);
 
-
-
-  d3.select("#btnExport").on("click", exportstuff);
-  d3.select("#btnT").on("click", function() {
-    load("mem_t.csv");
-  });
-  d3.select("#btnD").on("click", function() {
-    load("mem_d.csv");
-  });
-  d3.select("#btnB").on("click", function() {
-    load("mem_b.csv");
-  });
-  d3.select("#btnSum").on("click", function() {
-    load("mem_sum.csv");
-  });
-
-    // load initial chart
-    updateChart(data);
-    updateTable(data);
+    d3.select("#btnT").on("click", function() {
+        update(['t']);
+    });
+    d3.select("#btnD").on("click", function() {
+        update(['d']);
+    });
+    d3.select("#btnB").on("click", function() {
+        update(['b']);
+    });
+    d3.select("#btnSum").on("click", function() {
+        update(['t', 'd', 'b']);
+    });
 };
 
 function updateChart(data) {
@@ -116,10 +98,10 @@ function updateChart(data) {
         .style("opacity", 0);
 
     // For efficiency, filter nodes to keep only those large enough to see.
-    var nodes = partition.nodes(data)
-        .filter(function(d) {
-            return (d.dx > 0.005); // 0.005 radians = 0.29 degrees
-        });
+    var nodes = partition.nodes(data);
+        // .filter(function(d) {
+        //     return (d.dx > 0.005); // 0.005 radians = 0.29 degrees
+        // });
 
     var path = vis.data([data]).selectAll("path")
         .data(nodes)
@@ -130,7 +112,7 @@ function updateChart(data) {
         .style("fill", function(d) {
             tmp = d;
             if (!tmp.parent) {
-                return "#000";
+                return "#333";
             }
             while (tmp.parent.parent) {
                 tmp = tmp.parent;
@@ -163,7 +145,7 @@ function zoomIn(d) {
 function zoomOut(d) {
     d3.event.preventDefault();
     console.log("right click", d);
-    updateChart(tree);
+    updateChart(cur_view);
 };
 
 function updateTable(d) {
@@ -377,49 +359,54 @@ function drawLegend() {
 }
 
 
-// Take a 2-column CSV and transform it into a hierarchical structure suitable
-// for a partition layout. The first column is a sequence of step names, from
-// root to leaf, separated by hyphens. The second column is a count of how
-// often that sequence occurred.
-function buildHierarchy(csv) {
-  var root = {"name": "root", "children": []};
-  for (var i = 0; i < csv.length; i++) {
-    var sequence = csv[i][0];
-    var size = +csv[i][1];
-    if (isNaN(size)) { // e.g. if this is a header row
-      continue;
+function filter(type, depth, root) {
+    if (!root) {
+        root = 'RIOT';      /* put application name here */
     }
-    var parts = sequence.split(";");
-    var currentNode = root;
-    for (var j = 0; j < parts.length; j++) {
-      var children = currentNode["children"];
-      var nodeName = parts[j];
-      var childNode;
-      if (j + 1 < parts.length) {
-   // Not yet at the end of the sequence; move down the tree.
-    var foundChild = false;
-    for (var k = 0; k < children.length; k++) {
-      if (children[k]["name"] == nodeName) {
-        childNode = children[k];
-        foundChild = true;
-        break;
-      }
+    var r = {'name': root, 'children': []};
+    for (var i = 0; i < dataset.length; i++) {
+        // filter only requested types
+        if (type.indexOf(dataset[i].type) == -1) {
+            continue;
+        }
+
+        // add element to tree
+        var e = r;
+        var path = dataset[i]['path'];
+        path.push(dataset[i]['obj'])
+        for (var j = 0; j < path.length; j++) {
+            var child = undefined;
+            // search for part
+            for (var k = 0; k < e.children.length; k++) {
+                if (e.children[k]['name'] == path[j]) {
+                    child = e.children[k];
+                }
+            }
+            if (!child) {
+                e.children.push({'name': path[j], 'children': []}) - 1;
+                child = e.children[e.children.length - 1];
+            }
+            e = child;
+        }
+        /* build the branch, now adding the leaf */
+        e.children.push({'name': dataset[i]['sym'], 'size': dataset[i]['size']});
     }
-  // If we don't already have a child node for this branch, create it.
-    if (!foundChild) {
-      childNode = {"name": nodeName, "children": []};
-      children.push(childNode);
-    }
-    currentNode = childNode;
-      } else {
-    // Reached the end of the sequence; create a leaf node.
-    childNode = {"name": nodeName, "size": size};
-    children.push(childNode);
-      }
-    }
-  }
-  return root;
-};
+    return r;
+}
+
+function update(fil) {
+    cur_view = {};
+    cur_view = filter(fil);
+    updateChart(cur_view);
+    updateTable(cur_view);
+}
 
 
-load(DEFAULT_INPUTFILE);
+
+createVisualization();
+
+
+d3.json("symbols.json", function(data) {
+    dataset = data;
+    update(['t']);
+});
