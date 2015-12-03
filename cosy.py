@@ -23,6 +23,37 @@ import re
 import subprocess
 import copy
 
+from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+
+ROOT = 'root'
+PORT = 12345
+
+class HTTPHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/':
+            req = ROOT + '/index.html'
+        else:
+            req = ROOT + self.path
+
+        if not path.isfile(req):
+            self.send_error(404, 'file not found')
+            return
+
+        self.send_response(200)
+        if req.endswith('.html'):
+            self.send_header('Content-type', 'text/html')
+        elif req.endswith('.css'):
+            self.send_header('Content-type', 'text/css')
+        else:
+            self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+
+        f = open(req);
+        self.wfile.write(f.read())
+        f.close()
+
+
+
 def add_sym( target, sym ):
     if sym and (sym['addr'] != 0 or sym['sym'] == 'vectors'):
         target.append(copy.deepcopy(sym))
@@ -310,4 +341,9 @@ if __name__ == "__main__":
     print_size(res)
 
     # DEGBUG: output size results
-    print subprocess.check_output((args.p + 'size', elffile)),
+    print subprocess.check_output((args.p + 'size', elffile))
+
+
+    httpd = HTTPServer(('', PORT), HTTPHandler)
+    print "Started frontend server, connect your browser to localhost:" + str(PORT)
+    httpd.serve_forever()
