@@ -118,7 +118,7 @@ if __name__ == "__main__":
 
 
     nm_out = []
-    dump = subprocess.check_output(['nm', '--line-numbers', elffile])
+    dump = subprocess.check_output([args.p + 'nm', '--line-numbers', elffile])
     for line in dump.splitlines():
         m = re.match("([0-9a-f]+) ([tbdTDB]) ([_a-zA-Z0-9]+)[ \t]+.+/RIOT/(.+)/([-_a-zA-Z0-9]+\.[ch]):(\d+)$", line)
         if m:
