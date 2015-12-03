@@ -102,7 +102,7 @@ def print_subtree( depth, tree, cur ):
 if __name__ == "__main__":
     # Define some command line args
     p = argparse.ArgumentParser()
-    p.add_argument("file", default="test", nargs="?", help="base file name, .map and .elf will be added")
+    p.add_argument("file", default="test/hello", nargs="?", help="base file name, .map and .elf will be added")
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     args = p.parse_args()
 
