@@ -251,7 +251,7 @@ def symboljoin( symtable, nm_out ):
 
     # fill in some known paths
     for sym in symtable:
-        if sym['arcv'] == 'libc_s.a':
+        if sym['arcv'] == 'libc_s.a' or sym['arcv'] == 'libc_nano.a':
             sym['path'] = ['newlib', 'libc']
         elif sym['arcv'] == 'libgcc.a':
             sym['path'] = ['newlib', 'libgcc']
