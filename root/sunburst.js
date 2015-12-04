@@ -43,12 +43,11 @@ var DEFAULT_INPUTFILE = 'mem_t.csv'
 
 // Total size of all segments; we set this later, after loading the data.
 var totalSize = 0;
-
 var vis;
 
 // the complete dataset
+var info;
 var dataset;
-
 var cur_view;
 
 var partition = d3.layout.partition()
@@ -155,7 +154,7 @@ function updateTable(d) {
 };
 
 function tableAdd(d, table, layer) {
-    var name = (d.name == 'root') ? 'RIOT' : d.name;
+    var name = (d.name == 'root') ? info['app'] : d.name;
     var item = table.append("div");
     item.classed("l" + layer, true);
     item.text(name).append("div").text(d.value);
@@ -209,7 +208,7 @@ function mouseleave(d) {
 
   updateTable(d);
 
-  var name = (d.name == 'root') ? 'RIOT' : d.name;
+  var name = (d.name == 'root') ? info['app'] : d.name;
 
   // show generic stats
   d3.select("#expl_per").text("100%");
@@ -361,7 +360,7 @@ function drawLegend() {
 
 function filter(type, depth, root) {
     if (!root) {
-        root = 'RIOT';      /* put application name here */
+        root = info['app'];      /* put application name here */
     }
     var r = {'name': root, 'children': []};
     for (var i = 0; i < dataset.length; i++) {
@@ -372,7 +371,7 @@ function filter(type, depth, root) {
 
         // add element to tree
         var e = r;
-        var path = dataset[i]['path'];
+        var path = dataset[i]['path'].slice();
         path.push(dataset[i]['obj'])
         for (var j = 0; j < path.length; j++) {
             var child = undefined;
@@ -402,11 +401,11 @@ function update(fil) {
 }
 
 
-
+// bootstrap the whole damn thing
 createVisualization();
 
-
 d3.json("symbols.json", function(data) {
-    dataset = data;
+    info = data;
+    dataset = data['symbols'];
     update(['t']);
 });
