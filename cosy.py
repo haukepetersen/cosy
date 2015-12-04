@@ -272,9 +272,11 @@ def check_completeness( symbols ):
     for sym in symbols:
         if not sym['path']:
             wp.append(sym)
+            sym['path'] = ['unspecified']
     if len(wp) > 0:
         print("Warning: %i symbols could not be matched to a path" % (len(wp)))
         print("Your output will be incomplete!")
+
 
 
 if __name__ == "__main__":
