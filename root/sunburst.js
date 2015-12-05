@@ -129,6 +129,10 @@ function updateChart(data) {
 
     // Get total size of the tree = value of root node from partition.
     totalSize = path.node().__data__.value;
+
+    d3.select("#expl_per").text("100%");
+    d3.select("#expl_sym").text(info.app);
+    d3.select("#expl_size").text(totalSize + " byte");
 };
 
 // export svg to pdf of something else

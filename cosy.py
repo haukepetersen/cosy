@@ -24,35 +24,7 @@ import subprocess
 import copy
 import json
 
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-
-ROOT = 'root'
-PORT = 12345
-
-class HTTPHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        if self.path == '/':
-            req = ROOT + '/index.html'
-        else:
-            req = ROOT + self.path
-
-        if not path.isfile(req):
-            self.send_error(404, 'file not found')
-            return
-
-        self.send_response(200)
-        if req.endswith('.html'):
-            self.send_header('Content-type', 'text/html')
-        elif req.endswith('.css'):
-            self.send_header('Content-type', 'text/css')
-        else:
-            self.send_header('Content-type', 'text/plain')
-        self.end_headers()
-
-        f = open(req);
-        self.wfile.write(f.read())
-        f.close()
-
+import frontend_server
 
 
 def add_sym( target, sym ):
@@ -289,7 +261,7 @@ if __name__ == "__main__":
     args = p.parse_args()
 
     # extract path to elf and map file
-    base = path.abspath(args.appdir)
+    base = path.normpath(args.appdir)
     app = path.basename(base)
     elffile = base + "/bin/" + args.board + "/" + app + ".elf"
     mapfile = base + "/bin/" + args.board + "/" + app + ".map"
@@ -331,7 +303,4 @@ if __name__ == "__main__":
     print("Output of the '" + args.p + "size' command:")
     print(subprocess.check_output((args.p + 'size', elffile)))
 
-
-    httpd = HTTPServer(('', PORT), HTTPHandler)
-    print "Started frontend server, connect your browser to localhost:" + str(PORT)
-    httpd.serve_forever()
+    frontend_server.run('root', 12345, 'index.html')
