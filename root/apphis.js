@@ -35,7 +35,7 @@ var prepare = function() {
     chart = c3.generate({
         'bindto': '#chart',
         'size': {
-            'height': 1000,
+            'height': 500,
         },
         'data': {
             'x': 'x',

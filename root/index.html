@@ -11,6 +11,10 @@
   <body>
 
     <div id"menu">
+      <div class="bar">
+        <label for="filter-depth">Depth:</label>
+        <input type="text" id="filter-depth" value="0" />
+      </div>
       <input type="button" id="btnExport" value="export" />
       <input type="button" id="btnT" value="text" />
       <input type="button" id="btnD" value="data" />
@@ -28,10 +32,13 @@
         </div>
       </div>
     </div>
-    <div id="table">
-      <div>abdc</div>
-      <div>1234</div>
-    </div>
+    <table id="table">
+      <thead><tr>
+        <th class="sym">Module/Symbol</th>
+        <th class="size">Size [byte]</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
     <div id="sidebar">
       <!-- <input type="checkbox" id="togglelegend" checked="true"> Legend<br/> -->
       <div id="legend"></div>

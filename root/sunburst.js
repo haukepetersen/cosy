@@ -96,11 +96,7 @@ function updateChart(data) {
         .attr("r", radius)
         .style("opacity", 0);
 
-    // For efficiency, filter nodes to keep only those large enough to see.
     var nodes = partition.nodes(data);
-        // .filter(function(d) {
-        //     return (d.dx > 0.005); // 0.005 radians = 0.29 degrees
-        // });
 
     var path = vis.data([data]).selectAll("path")
         .data(nodes)
@@ -120,7 +116,8 @@ function updateChart(data) {
         })
         .style("opacity", 1)
         .on("click", zoomIn)
-        .on("mouseover", mouseover);
+        .on("mouseover", mouseover)
+        .append("text").attr("dx", 12).attr("dy", ".35em").text(function(d) {return d.name });
 
     // Add the mouseleave handler to the bounding circle.
     d3.select("#container")
@@ -153,20 +150,18 @@ function zoomOut(d) {
 
 function updateTable(d) {
     var table = d3.select("#table");
-    table.selectAll("div").remove();
-    tableAdd(d, table, 0);
+    table.selectAll("tbody").remove();
+    var body = table.append("tbody");
+    tableAdd(d, body, 1);
 };
 
-function tableAdd(d, table, layer) {
-    var name = (d.name == 'root') ? info['app'] : d.name;
-    var item = table.append("div");
-    item.classed("l" + layer, true);
-    item.text(name).append("div").text(d.value);
-    if (d.children && layer < 1) {
+function tableAdd(d, body, layer) {
+    var row = body.append("tr").classed("l" + layer, true);
+    row.append("td").text(d.name);
+    row.append("td").text(d.value).classed("size", true);
+    if (d.children && layer < 2) {
         for (var i = 0; i < d.children.length; i++) {
-            if (d.children[i]) {
-                tableAdd(d.children[i], table, layer + 1);
-            }
+            tableAdd(d.children[i], body, layer + 1);
         }
     }
 };

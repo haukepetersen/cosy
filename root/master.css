@@ -21,53 +21,33 @@ body {
   width: 500px;
 }
 
-#table > div {
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #f0f0f0;
-  cursor: pointer;
+#table {
+  background-color: #e0e0e0;
+}
+#table > thead {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+#table th.size, #table td.size {
+  width: 30%;
+  text-align: center;
 }
 
-#table div:hover {
-  border-bottom: 1px solid #000;
-  color: #333;
-}
-
-#table > div.l1 {
+tr.l1 {
   background-color: #f0f0f0;
   padding-left: 10px;
+  font-weight: bold;
 }
-#table > div.l2 {
-  background-color: #ececec;
+tr.l2 {
+  background-color: #f6f6f6;
   padding-left: 20px;
 }
-#table > div.l3 {
-  background-color: #e8e8e8;
-  padding-left: 30px;
-}
-#table > div.l4 {
-  background-color: #e4e4e4;
-  padding-left: 40px;
-}
-#table > div.l5 {
-  background-color: #e0e0e0;
-  padding-left: 50px;
-}
-#table > div.l6 {
-  background-color: #dcdcdc;
-  padding-left: 60px;
-}
-#table > div.l7 {
-  background-color: #d8d8d8;
-  padding-left: 70px;
-}
-#table > div.l8 {
-  background-color: #d4d4d4;
-  padding-left: 80px;
+tr.l1:hover, tr.l2:hover {
+  background-color: #ccc;
 }
 
-#table > div > div {
-  width: 100px;
-  float: right;
+#filter-depth {
+  text-align: right;
 }
 
 #sequence {
