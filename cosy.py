@@ -223,10 +223,12 @@ def symboljoin( symtable, nm_out ):
 
     # fill in some known paths
     for sym in symtable:
-        if sym['arcv'] == 'libc_s.a' or sym['arcv'] == 'libc_nano.a':
+        if sym['arcv'] == 'libc_s.a' or sym['arcv'] == 'libc_nano.a' or sym['arcv'] == 'libm.a':
             sym['path'] = ['newlib', 'libc']
         elif sym['arcv'] == 'libgcc.a':
             sym['path'] = ['newlib', 'libgcc']
+        elif sym['obj'] == 'syscalls.o':
+            sym['path'] = ['sys', 'syscalls']
         elif sym['sym'] == 'fill':
             sym['path'] = ['fill']
 
@@ -245,6 +247,7 @@ def check_completeness( symbols ):
         if not sym['path']:
             wp.append(sym)
             sym['path'] = ['unspecified']
+            print(sym)
     if len(wp) > 0:
         print("Warning: %i symbols could not be matched to a path" % (len(wp)))
         print("Your output will be incomplete!")
