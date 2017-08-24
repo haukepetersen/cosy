@@ -259,6 +259,8 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("appdir", default="../RIOT/examples/hello-world", nargs="?", help="Full path to application dir")
     p.add_argument("board", default="iotlab-m3", nargs="?", help="BOARD to analyze")
+    p.add_argument("elf_file", default="", nargs="?", help="ELF file")
+    p.add_argument("map_file", default="", nargs="?", help="MAP file")
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     p.add_argument("-v", action="store_true", help="Dump symbol sizes to STDIO")
     args = p.parse_args()
@@ -266,8 +268,14 @@ if __name__ == "__main__":
     # extract path to elf and map file
     base = path.normpath(args.appdir)
     app = path.basename(base)
-    elffile = base + "/bin/" + args.board + "/" + app + ".elf"
-    mapfile = base + "/bin/" + args.board + "/" + app + ".map"
+    if args.elf_file:
+        elffile = args.elf_file
+    else:
+        elffile = base + "/bin/" + args.board + "/" + app + ".elf"
+    if args.map_file:
+        mapfile = args.map_file
+    else:
+        mapfile = base + "/bin/" + args.board + "/" + app + ".map"
 
     # Test if file exisists
     if not path.isfile(elffile):
