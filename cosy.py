@@ -263,6 +263,7 @@ if __name__ == "__main__":
     p.add_argument("map_file", default="", nargs="?", help="MAP file")
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     p.add_argument("-v", action="store_true", help="Dump symbol sizes to STDIO")
+    p.add_argument("-d", action="store_true", help="Don't run as web server")
     args = p.parse_args()
 
     # extract path to elf and map file
@@ -314,4 +315,5 @@ if __name__ == "__main__":
     print("Output of the '" + args.p + "size' command:")
     print(subprocess.check_output((args.p + 'size', elffile)))
 
-    frontend_server.run('root', 12345, 'index.html')
+    if not args.d:
+        frontend_server.run('root', 12345, 'index.html')
