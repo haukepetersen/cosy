@@ -27,49 +27,56 @@ import json
 import frontend_server
 
 
-def add_sym( target, sym ):
+def add_sym(target, sym):
     if sym and (sym['addr'] != 0 or sym['sym'] == 'vectors'):
         target.append(copy.deepcopy(sym))
+
 
 def size_init():
     return {'t': 0, 'd': 0, 'b': 0, 'sum': 0}
 
-def size_add( obj, sym ):
+
+def size_add(obj, sym):
     obj[sym['type']] += sym['size']
     obj['sum'] += sym['size']
+
 
 def print_shead():
     print("%-60s %7s %7s %7s %7s %7s" % ("module", "text", "data", "bss", "dec", "hex"))
     print("------------------------------------------------------------------------------------------")
 
-def print_mod( name, size ):
+
+def print_mod(name, size):
     print("%-60s %7i %7i %7i %7i %7x" % (name, size['t'], size['d'], size['b'], size['sum'], size['sum']))
 
-def print_sum( obj ):
+
+def print_sum(obj):
     print("------------------------------------------------------------------------------------------")
     print_mod("SUM", obj)
     print("------------------------------------------------------------------------------------------")
     print("")
 
-def print_size( obj ):
+
+def print_size(obj):
     print("   text    data     bss     dec     hex")
     print("%7i %7i %7i %7i %7x" % (obj['t'], obj['d'], obj['b'], obj['sum'], obj['sum']))
 
-def print_tree( depth, tree ):
+
+def print_tree(depth, tree):
     print_shead()
     print_subtree(depth, tree, 0)
     print_sum(tree['size'])
 
 
-def print_subtree( depth, tree, cur ):
+def print_subtree(depth, tree, cur):
     if depth:
         for t in tree:
             if t != 'size':
                 ind = ""
                 for i in range(0, cur):
                     ind += ".... "
-                print_mod( ind + t, tree[t]['size'])
-                print_subtree( depth - 1, tree[t], cur + 1)
+                print_mod(ind + t, tree[t]['size'])
+                print_subtree(depth - 1, tree[t], cur + 1)
 
 
 def dump_modules(symtable):
@@ -131,7 +138,7 @@ def parse_elffile(elffile, prefix):
     return res
 
 
-def parse_mapfile( mapfile ):
+def parse_mapfile(mapfile):
     res = []
     cur_type = ''
     cur_sym = {}
@@ -155,7 +162,7 @@ def parse_mapfile( mapfile ):
                 add_sym(res, cur_sym)
                 cur_type = ''
                 # continue
-                break;
+                break
 
             if cur_type:
                 # fill bytes?
@@ -174,7 +181,7 @@ def parse_mapfile( mapfile ):
                         'obj': '',
                         'alias': []
                         }
-                    continue;
+                    continue
 
                 # start of a new symbol
                 m = re.match(" \.([a-z]+\.)?([-_\.A-Za-z0-9]+)", line)
@@ -216,7 +223,8 @@ def parse_mapfile( mapfile ):
                     cur_sym['alias'].append(m.group(1))
     return res
 
-def symboljoin( symtable, nm_out ):
+
+def symboljoin(symtable, nm_out):
     # get paths from nm-dump output
     for nm in nm_out:
         for m in symtable:
@@ -243,7 +251,8 @@ def symboljoin( symtable, nm_out ):
         if not sym['path'] and sym['arcv'] and sym['arcv'] in otp:
             sym['path'] = otp[sym['arcv']]
 
-def check_completeness( symbols ):
+
+def check_completeness(symbols):
     wp = []
     for sym in symbols:
         if not sym['path']:
@@ -253,7 +262,6 @@ def check_completeness( symbols ):
     if len(wp) > 0:
         print("Warning: %i symbols could not be matched to a path" % (len(wp)))
         print("Your output will be incomplete!")
-
 
 
 if __name__ == "__main__":
@@ -287,7 +295,6 @@ if __name__ == "__main__":
     if not path.isfile(mapfile):
         sys.exit("Error: MAP file '" + mapfile + "' does not exist")
 
-
     # get c-file names, addresses and paths from elf file
     nm_out = parse_elffile(elffile, args.p)
     # get symbol sizes and addresses archive and object files from map file
@@ -306,8 +313,7 @@ if __name__ == "__main__":
     # export results to json file
     data = {'app': app, 'board': args.board, 'symbols': symtable}
     with open("root/symbols.json", 'w') as f:
-        json.dump(data, f, indent = 4)
-
+        json.dump(data, f, indent=4)
 
     print("\nResult validation: both size outputs below should match")
     print("Computed sums of parsed symbols:")
