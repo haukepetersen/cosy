@@ -73,13 +73,12 @@ def print_subtree( depth, tree, cur ):
 
 
 def get_csvhead():
-    return "%s, %s, %s, %s, %s\n" % ("module", "text", "data", "bss", "dec")
+    return "%s,%s,%s,%s,%s\n" % ("module", "text", "data", "bss", "dec")
 
 
 def get_csvmod(name, size):
-    return "%s, %i, %i, %i, %i\n" % (name, size['t'], size['d'],
-                                     size['b'], size['sum'])
-
+    return "%s,%i,%i,%i,%i\n" % (name, size['t'], size['d'], size['b'],
+                                 size['sum'])
 
 def dump_modules(symtable):
     sa = dict()
