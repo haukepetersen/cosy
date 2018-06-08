@@ -72,6 +72,15 @@ def print_subtree( depth, tree, cur ):
                 print_subtree( depth - 1, tree[t], cur + 1)
 
 
+def get_csvhead():
+    return "%s, %s, %s, %s, %s\n" % ("module", "text", "data", "bss", "dec")
+
+
+def get_csvmod(name, size):
+    return "%s, %i, %i, %i, %i\n" % (name, size['t'], size['d'],
+                                     size['b'], size['sum'])
+
+
 def dump_modules(symtable):
     sa = dict()
     sm = size_init()
@@ -108,6 +117,23 @@ def dump_table(symtable):
             tmp[sym['sym']] = {'size': size_init()}
         size_add(tmp[sym['sym']]['size'], sym)
     print_tree(10, sa)
+
+
+def write_csv(symtable, csv):
+    sa = dict()
+    for sym in symtable:
+        if sym['arcv']:
+            k = sym['arcv']
+        elif sym['obj']:
+            k = sym['obj']
+        else:
+            k = sym['sym']
+        if k not in sa:
+            sa[k] = size_init()
+        size_add(sa[k], sym)
+    csv.write(get_csvhead())
+    for a in sorted(sa):
+        csv.write(get_csvmod(a, sa[a]))
 
 
 def parse_elffile(elffile, prefix):
@@ -266,6 +292,8 @@ if __name__ == "__main__":
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     p.add_argument("-m", action="store_true", help="Dump module sizes to STDIO")
     p.add_argument("-v", action="store_true", help="Dump symbol sizes to STDIO")
+    p.add_argument("-c", type=argparse.FileType('w'),
+                   help="Write module sizes to cvs file")
     p.add_argument("-d", action="store_true", help="Don't run as web server")
     args = p.parse_args()
 
@@ -302,6 +330,8 @@ if __name__ == "__main__":
         dump_modules(symtable)
     if args.v:
         dump_table(symtable)
+    if args.c:
+        write_csv(symtable, args.c)
 
     # export results to json file
     data = {'app': app, 'board': args.board, 'symbols': symtable}
