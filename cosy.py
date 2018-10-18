@@ -72,7 +72,7 @@ def print_subtree( depth, tree, cur ):
                 print_subtree( depth - 1, tree[t], cur + 1)
 
 
-def dump_table( symtable ):
+def dump_modules(symtable):
     sa = dict()
     sm = size_init()
     for sym in symtable:
@@ -91,6 +91,8 @@ def dump_table( symtable ):
         print_mod(a, sa[a])
     print_sum(sm)
 
+
+def dump_table(symtable):
     # print sizes on module (riot folder) base
     sa = {'size': size_init()}
     for sym in symtable:
@@ -262,6 +264,7 @@ if __name__ == "__main__":
     p.add_argument("elf_file", default="", nargs="?", help="ELF file")
     p.add_argument("map_file", default="", nargs="?", help="MAP file")
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
+    p.add_argument("-m", action="store_true", help="Dump module sizes to STDIO")
     p.add_argument("-v", action="store_true", help="Dump symbol sizes to STDIO")
     p.add_argument("-d", action="store_true", help="Don't run as web server")
     args = p.parse_args()
@@ -295,6 +298,8 @@ if __name__ == "__main__":
     check_completeness(symtable)
 
     # dump symbols to STDIO if verbose option is set
+    if args.v or args.m:
+        dump_modules(symtable)
     if args.v:
         dump_table(symtable)
 
