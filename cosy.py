@@ -108,9 +108,9 @@ def dump_table( symtable ):
     print_tree(10, sa)
 
 
-def parse_elffile( elffile ):
+def parse_elffile(elffile, prefix):
     res = []
-    dump = subprocess.check_output(['nm', '--line-numbers', elffile])
+    dump = subprocess.check_output([prefix + 'nm', '--line-numbers', elffile])
     for line in dump.splitlines():
         m = re.match("([0-9a-f]+) ([tbdTDB]) ([_a-zA-Z0-9]+)[ \t]+.+/RIOT/(.+)/([-_a-zA-Z0-9]+\.[ch]):(\d+)$", line)
         if m:
@@ -286,7 +286,7 @@ if __name__ == "__main__":
 
 
     # get c-file names, addresses and paths from elf file
-    nm_out = parse_elffile(elffile)
+    nm_out = parse_elffile(elffile, args.p)
     # get symbol sizes and addresses archive and object files from map file
     symtable = parse_mapfile(mapfile)
     # join them into one symbol table
