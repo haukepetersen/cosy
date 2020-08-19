@@ -145,7 +145,10 @@ def write_csv(symtable, csv):
 def parse_elffile(elffile, prefix, riot_base=None):
     res = []
     dump = subprocess.check_output([prefix + 'nm', '--line-numbers', elffile])
-    riot_base = "RIOT|riotbuild/riotbase"
+    if riot_base:
+        riot_base = riot_base.strip("/")
+    else:
+        riot_base = "RIOT|riotbuild/riotbase"
     riot_base = "riotbuild/riotproject|{}".format(riot_base)
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
                    r"(?P<type>[tbdTDB]) "
@@ -300,6 +303,7 @@ if __name__ == "__main__":
     p.add_argument("board", default="iotlab-m3", nargs="?", help="BOARD to analyze")
     p.add_argument("elf_file", default="", nargs="?", help="ELF file")
     p.add_argument("map_file", default="", nargs="?", help="MAP file")
+    p.add_argument("--riot-base", "-r", default=None, help="RIOT base")
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     p.add_argument("-m", action="store_true", help="Dump module sizes to STDIO")
     p.add_argument("-v", action="store_true", help="Dump symbol sizes to STDIO")
@@ -327,7 +331,7 @@ if __name__ == "__main__":
         sys.exit("Error: MAP file '" + mapfile + "' does not exist")
 
     # get c-file names, addresses and paths from elf file
-    nm_out = parse_elffile(elffile, args.p)
+    nm_out = parse_elffile(elffile, args.p, args.riot_base)
     # get symbol sizes and addresses archive and object files from map file
     symtable = parse_mapfile(mapfile)
     # join them into one symbol table
