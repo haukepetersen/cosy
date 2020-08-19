@@ -145,12 +145,15 @@ def write_csv(symtable, csv):
 def parse_elffile(elffile, prefix, riot_base=None):
     res = []
     dump = subprocess.check_output([prefix + 'nm', '--line-numbers', elffile])
+    riot_base = "RIOT|riotbuild/riotbase"
+    riot_base = "riotbuild/riotproject|{}".format(riot_base)
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
                    r"(?P<type>[tbdTDB]) "
-                   r"(?P<sym>[0-9a-zA-Z_]+)\s+.+/RIOT/"
+                   r"(?P<sym>[0-9a-zA-Z_]+)\s+"
+                   r".+/({riot_base}|{riot_base}/build|.*bin/pkg)/"
                    r"(?P<path>.+)/"
                    r"(?P<file>[0-9a-zA-Z_-]+\.[ch]):"
-                   r"(?P<line>\d+)$")
+                   r"(?P<line>\d+)$".format(riot_base=riot_base))
     for line in dump.splitlines():
         m = c.match(line)
         if m:
