@@ -142,7 +142,7 @@ def write_csv(symtable, csv):
         csv.write(get_csvmod(a, sa[a]))
 
 
-def parse_elffile(elffile, prefix, riot_base=None):
+def parse_elffile(elffile, prefix, appdir, riot_base=None):
     res = []
     dump = subprocess.check_output([prefix + 'nm', '--line-numbers', elffile])
     if riot_base:
@@ -150,13 +150,19 @@ def parse_elffile(elffile, prefix, riot_base=None):
     else:
         riot_base = "RIOT|riotbuild/riotbase"
     riot_base = "riotbuild/riotproject|{}".format(riot_base)
+    if not re.search("/({riot_base})/".format(riot_base=riot_base), appdir):
+        # appdir not in riot_base
+        riot_base = "{appdir}|{riot_base}".format(
+            riot_base=riot_base, appdir=appdir.strip("/"))
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
                    r"(?P<type>[tbdTDB]) "
                    r"(?P<sym>[0-9a-zA-Z_]+)\s+"
-                   r".+/({riot_base}|{riot_base}/build|.*bin/pkg)/"
+                   r"(.+/)?({riot_base}|({riot_base})/build|"
+                   r"{appdir}/.*bin/pkg)/"
                    r"(?P<path>.+)/"
                    r"(?P<file>[0-9a-zA-Z_-]+\.[ch]):"
-                   r"(?P<line>\d+)$".format(riot_base=riot_base))
+                   r"(?P<line>\d+)$".format(riot_base=riot_base,
+                                            appdir=appdir))
     for line in dump.splitlines():
         m = c.match(line)
         if m:
@@ -331,7 +337,8 @@ if __name__ == "__main__":
         sys.exit("Error: MAP file '" + mapfile + "' does not exist")
 
     # get c-file names, addresses and paths from elf file
-    nm_out = parse_elffile(elffile, args.p, args.riot_base)
+    nm_out = parse_elffile(elffile, args.p, path.abspath(base),
+                           args.riot_base)
     # get symbol sizes and addresses archive and object files from map file
     symtable = parse_mapfile(mapfile)
     # join them into one symbol table
