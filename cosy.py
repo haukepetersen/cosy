@@ -142,24 +142,37 @@ def write_csv(symtable, csv):
         csv.write(get_csvmod(a, sa[a]))
 
 
-def parse_elffile(elffile, prefix):
+def parse_elffile(elffile, prefix, appdir, riot_base=None):
     res = []
     dump = subprocess.check_output([prefix + 'nm', '--line-numbers', elffile])
+    if riot_base:
+        riot_base = riot_base.strip("/")
+    else:
+        riot_base = "RIOT|riotbuild/riotbase"
+    riot_base = "riotbuild/riotproject|{}".format(riot_base)
+    if not re.search("/({riot_base})/".format(riot_base=riot_base), appdir):
+        # appdir not in riot_base
+        riot_base = "{appdir}|{riot_base}".format(
+            riot_base=riot_base, appdir=appdir.strip("/"))
+    c = re.compile(r"(?P<addr>[0-9a-f]+) "
+                   r"(?P<type>[tbdTDB]) "
+                   r"(?P<sym>[0-9a-zA-Z_]+)\s+"
+                   r"(.+/)?({riot_base}|({riot_base})/build|"
+                   r"{appdir}/.*bin/pkg)/"
+                   r"(?P<path>.+)/"
+                   r"(?P<file>[0-9a-zA-Z_-]+\.[ch]):"
+                   r"(?P<line>\d+)$".format(riot_base=riot_base,
+                                            appdir=appdir))
     for line in dump.splitlines():
-        m = re.match("([0-9a-f]+) ([tbdTDB]) ([_a-zA-Z0-9]+)[ \t]+.+/RIOT/(.+)/([-_a-zA-Z0-9]+\.[ch]):(\d+)$", line)
+        m = c.match(line)
         if m:
-            res.append({
-                'sym': m.group(3),
-                'path': m.group(4).split('/'),
-                'file': m.group(5),
-                'line': int(m.group(6)),
-                'addr': int(m.group(1), 16),
-                'type': m.group(2).lower(),
-                'arcv': '',
-                'obj': '',
-                'size': -1,
-                'alias': []
-                })
+            d = {'arcv': '', 'obj': '', 'size': -1, 'alias': []}
+            d.update(m.groupdict())
+            d['path'] = d['path'].split(path.sep)
+            d['line'] = int(d['line'])
+            d['addr'] = int(d['addr'], 16)
+            d['type'] = d['type'].lower()
+            res.append(d)
     return res
 
 
@@ -296,6 +309,7 @@ if __name__ == "__main__":
     p.add_argument("board", default="iotlab-m3", nargs="?", help="BOARD to analyze")
     p.add_argument("elf_file", default="", nargs="?", help="ELF file")
     p.add_argument("map_file", default="", nargs="?", help="MAP file")
+    p.add_argument("--riot-base", "-r", default=None, help="RIOT base")
     p.add_argument("-p", default="", help="Toolchain prefix, e.g. arm-none-eabi-")
     p.add_argument("-m", action="store_true", help="Dump module sizes to STDIO")
     p.add_argument("-v", action="store_true", help="Dump symbol sizes to STDIO")
@@ -323,7 +337,8 @@ if __name__ == "__main__":
         sys.exit("Error: MAP file '" + mapfile + "' does not exist")
 
     # get c-file names, addresses and paths from elf file
-    nm_out = parse_elffile(elffile, args.p)
+    nm_out = parse_elffile(elffile, args.p, path.abspath(base),
+                           args.riot_base)
     # get symbol sizes and addresses archive and object files from map file
     symtable = parse_mapfile(mapfile)
     # join them into one symbol table
