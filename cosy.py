@@ -142,24 +142,25 @@ def write_csv(symtable, csv):
         csv.write(get_csvmod(a, sa[a]))
 
 
-def parse_elffile(elffile, prefix):
+def parse_elffile(elffile, prefix, riot_base=None):
     res = []
     dump = subprocess.check_output([prefix + 'nm', '--line-numbers', elffile])
+    c = re.compile(r"(?P<addr>[0-9a-f]+) "
+                   r"(?P<type>[tbdTDB]) "
+                   r"(?P<sym>[0-9a-zA-Z_]+)\s+.+/RIOT/"
+                   r"(?P<path>.+)/"
+                   r"(?P<file>[0-9a-zA-Z_-]+\.[ch]):"
+                   r"(?P<line>\d+)$")
     for line in dump.splitlines():
-        m = re.match("([0-9a-f]+) ([tbdTDB]) ([_a-zA-Z0-9]+)[ \t]+.+/RIOT/(.+)/([-_a-zA-Z0-9]+\.[ch]):(\d+)$", line)
+        m = c.match(line)
         if m:
-            res.append({
-                'sym': m.group(3),
-                'path': m.group(4).split('/'),
-                'file': m.group(5),
-                'line': int(m.group(6)),
-                'addr': int(m.group(1), 16),
-                'type': m.group(2).lower(),
-                'arcv': '',
-                'obj': '',
-                'size': -1,
-                'alias': []
-                })
+            d = {'arcv': '', 'obj': '', 'size': -1, 'alias': []}
+            d.update(m.groupdict())
+            d['path'] = d['path'].split(path.sep)
+            d['line'] = int(d['line'])
+            d['addr'] = int(d['addr'], 16)
+            d['type'] = d['type'].lower()
+            res.append(d)
     return res
 
 
