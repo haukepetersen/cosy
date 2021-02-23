@@ -17,7 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
-from os import path
+from os import path, chdir
 import argparse
 import re
 import subprocess
@@ -303,6 +303,11 @@ def check_completeness(symbols):
 
 
 if __name__ == "__main__":
+
+    # change to directory of cosy.py
+    dname = path.dirname(path.abspath(__file__))
+    chdir(dname)
+
     # Define some command line args
     p = argparse.ArgumentParser()
     p.add_argument("appdir", default="../RIOT/examples/hello-world", nargs="?", help="Full path to application dir")
