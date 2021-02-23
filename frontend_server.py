@@ -36,5 +36,5 @@ def run( root, port, index ):
     HTTPHandler.index = index
     HTTPHandler.root = root
     httpd = HTTPServer(('', port), HTTPHandler)
-    print("Started frontend server, connect you browser to localhost:" + str(port))
+    print("Started frontend server, connect you browser to http://localhost:" + str(port))
     httpd.serve_forever()
