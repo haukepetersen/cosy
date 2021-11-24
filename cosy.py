@@ -156,11 +156,12 @@ def parse_elffile(elffile, prefix, appdir, riot_base=None):
             riot_base=riot_base, appdir=appdir.strip("/"))
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
                    r"(?P<type>[tbdTDB]) "
-                   r"(?P<sym>[0-9a-zA-Z_]+)\s+"
+                   r"(?P<sym>[0-9a-zA-Z_$.]+)\s+"
                    r"(.+/)?({riot_base}|({riot_base})/build|"
+                   r".cargo/registry/src/[^/]+|"
                    r"{appdir}/.*bin/pkg)/"
                    r"(?P<path>.+)/"
-                   r"(?P<file>[0-9a-zA-Z_-]+\.[ch]):"
+                   r"(?P<file>[0-9a-zA-Z_-]+\.(c|h|rs)):"
                    r"(?P<line>\d+)$".format(riot_base=riot_base,
                                             appdir=appdir))
     for line in dump.splitlines():
