@@ -225,7 +225,7 @@ def parse_mapfile(mapfile):
                     continue
 
                 # start of a new symbol
-                m = re.match(" \.([a-z]+\.)?([-_\.A-Za-z0-9]+)", line)
+                m = re.match(" \.([a-z]+\.)?([-_\.A-Za-z0-9$.]+)", line)
                 if m:
                     # save last symbol
                     add_sym(res, cur_sym)
