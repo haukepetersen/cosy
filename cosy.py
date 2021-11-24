@@ -159,6 +159,8 @@ def parse_elffile(elffile, prefix, appdir, riot_base=None):
                    r"(?P<sym>[0-9a-zA-Z_$.]+)\s+"
                    r"(.+/)?({riot_base}|({riot_base})/build|"
                    r".cargo/registry/src/[^/]+|"
+                   r".cargo/git/checkouts|"
+                   r"/rustc/[0-9a-f]+/?/library|"
                    r"{appdir}/.*bin/pkg)/"
                    r"(?P<path>.+)/"
                    r"(?P<file>[0-9a-zA-Z_-]+\.(c|h|rs)):"
