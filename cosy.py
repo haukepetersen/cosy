@@ -149,24 +149,29 @@ def write_csv(symtable, csv):
 def parse_elffile(elffile, prefix, appdir, riot_base=None):
     res = []
     dump = subprocess.check_output([prefix + 'nm', '--line-numbers', elffile])
+
+    appdir = appdir.strip("/")
+    rbase = ["riotbuild/riotproject"]
     if riot_base:
-        riot_base = riot_base.strip("/")
+        rbase.append(riot_base.strip("/"))
     else:
-        riot_base = "RIOT|riotbuild/riotbase"
-    riot_base = "riotbuild/riotproject|{}".format(riot_base)
-    if not re.search("/({riot_base})/".format(riot_base=riot_base), appdir):
-        # appdir not in riot_base
-        riot_base = "{appdir}|{riot_base}".format(
-            riot_base=riot_base, appdir=appdir.strip("/"))
+        rbase.append("RIOT")
+        rbase.append("riotbuild/riotbase")
+    riot_base = "|".join([f'{p}/build|{p}' for p in rbase])
 
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
                    r"(?P<type>[tbdTDB]) "
                    r"(?P<sym>[0-9a-zA-Z_$.]+)\s+"
-                   r"(.+/)?({riot_base}|({riot_base})/build|"
+                   r"(.+/)?"
+                   r"("
+                   r"{appdir}|"
+                   r"{riot_base}|"
                    r".cargo/registry/src/[^/]+|"
                    r".cargo/git/checkouts|"
                    r"/rustc/[0-9a-f]+/?/library|"
-                   r"{appdir}/.*bin/pkg)/"
+                   r"ip-over-ble_experiments|"  # HACK...
+                   r"{appdir}/.*bin/pkg"
+                   r")/"
                    r"(?P<path>.+)/"
                    r"(?P<file>[0-9a-zA-Z_-]+\.(c|h|rs)):"
                    r"(?P<line>\d+)$".format(riot_base=riot_base,
@@ -273,8 +278,10 @@ def parse_mapfile(mapfile):
 def symboljoin(symtable, nm_out):
     # get paths from nm-dump output
     for nm in nm_out:
+        if nm["sym"] == "_gnrc_ipv6_nib.str1.1":
+            print("NM", nm)
         for m in symtable:
-            if (nm['addr'] & 0xfffffffe) == m['addr']:
+            if (nm['addr'] & 0xfffffffe) == (m['addr'] & 0xfffffffe):
                 m['path'] = nm['path']
 
     # fill in some known paths
@@ -296,6 +303,27 @@ def symboljoin(symtable, nm_out):
     for sym in symtable:
         if not sym['path'] and sym['arcv'] and sym['arcv'] in otp:
             sym['path'] = otp[sym['arcv']]
+
+    # deduct paths for string objects by matching base names
+    for m in symtable:
+        if not m["path"] and ".str" in m["sym"]:
+            basesym = m["sym"].split(".")[0]
+            for nm in nm_out:
+                if nm["sym"] == basesym and m["obj"].split(".")[0] == nm["file"].split(".")[0]:
+                    m["path"] = nm["path"]
+
+
+    # Hack?! for all symbols that we were not able to match so far, we match
+    # the name of their object file against the known C files and use their
+    # path
+    for m in symtable:
+        if not m["path"]:
+            objbase = ".".join(m["obj"].split(".")[:-1])
+            for nm in nm_out:
+                if objbase == ".".join(nm["file"].split(".")[:-1]):
+                    if not "include" in nm["path"]:
+                        m["path"] = nm["path"]
+                        break
 
 
 def check_completeness(symbols):
