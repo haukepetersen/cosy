@@ -18,6 +18,7 @@
 
 import sys
 from os import path
+from pathlib import Path
 import argparse
 import re
 import subprocess
@@ -26,7 +27,7 @@ import json
 
 import frontend_server
 
-
+ROOT = path.join(Path(path.abspath(__file__)).parent, "root")
 PORT = 12345
 
 
@@ -363,7 +364,7 @@ if __name__ == "__main__":
 
     # export results to json file
     data = {'app': app, 'board': args.board, 'symbols': symtable}
-    with open("root/symbols.json", 'w') as f:
+    with open(path.join(ROOT, "symbols.json"), 'w') as f:
         json.dump(data, f, indent=4)
 
     print("\nResult validation: both size outputs below should match")
@@ -378,4 +379,4 @@ if __name__ == "__main__":
     print(subprocess.check_output((args.p + 'size', elffile)).decode("utf-8"))
 
     if not args.d:
-        frontend_server.run('root', PORT, 'index.html')
+        frontend_server.run(ROOT, PORT, 'index.html')
