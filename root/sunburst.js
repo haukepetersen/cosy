@@ -36,6 +36,7 @@ var colors = {
   "drivers": "#35a9b5",
   "sys": "#5687d1",
   "newlib": "#6ab975",
+  "pkg": "#59a9c9",
   "fill": "#bbbbbb"
 };
 
