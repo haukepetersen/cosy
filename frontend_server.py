@@ -1,8 +1,8 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 from os import path
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class HTTPHandler(BaseHTTPRequestHandler):
 
@@ -28,9 +28,9 @@ class HTTPHandler(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'text/plain')
         self.end_headers()
 
-        f = open(req);
-        self.wfile.write(f.read())
-        f.close()
+        with open(req, "rb") as f:
+            self.wfile.write(f.read())
+
 
 def run( root, port, index ):
     HTTPHandler.index = index

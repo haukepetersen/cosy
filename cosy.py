@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2015  Hauke Petersen <dev@haukepetersen.de>
@@ -25,6 +25,9 @@ import copy
 import json
 
 import frontend_server
+
+
+PORT = 12345
 
 
 def add_sym(target, sym):
@@ -154,6 +157,7 @@ def parse_elffile(elffile, prefix, appdir, riot_base=None):
         # appdir not in riot_base
         riot_base = "{appdir}|{riot_base}".format(
             riot_base=riot_base, appdir=appdir.strip("/"))
+
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
                    r"(?P<type>[tbdTDB]) "
                    r"(?P<sym>[0-9a-zA-Z_$.]+)\s+"
@@ -167,7 +171,7 @@ def parse_elffile(elffile, prefix, appdir, riot_base=None):
                    r"(?P<line>\d+)$".format(riot_base=riot_base,
                                             appdir=appdir))
     for line in dump.splitlines():
-        m = c.match(line)
+        m = c.match(line.decode("utf-8"))
         if m:
             d = {'arcv': '', 'obj': '', 'size': -1, 'alias': []}
             d.update(m.groupdict())
@@ -371,7 +375,7 @@ if __name__ == "__main__":
     print_size(res)
     # DEGBUG: output size results
     print("Output of the '" + args.p + "size' command:")
-    print(subprocess.check_output((args.p + 'size', elffile)))
+    print(subprocess.check_output((args.p + 'size', elffile)).decode("utf-8"))
 
     if not args.d:
-        frontend_server.run('root', 12345, 'index.html')
+        frontend_server.run('root', PORT, 'index.html')
