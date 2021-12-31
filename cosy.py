@@ -20,6 +20,7 @@ import sys
 from os import path
 from pathlib import Path
 import argparse
+import itertools
 import re
 import subprocess
 import copy
@@ -338,6 +339,32 @@ def check_completeness(symbols):
         print("Your output will be incomplete!")
 
 
+def demangle(symtable):
+    """Replace the alias entries with more readable names for the same symbol in-place
+
+    This is done by passing the collected symbol names through the ``rustfilt``
+    program if it is present, and returning without any actions otherwise.
+    """
+
+    all_symbols = list(itertools.chain(*([s['sym']] + s['alias'] for s in symtable)))
+    assert not any("\n" in s for s in all_symbols)
+    symbol_count = len(all_symbols)
+    all_symbols = "\n".join(all_symbols)
+
+    try:
+        filtered_symbols = subprocess.check_output(['rustfilt'], input=all_symbols.encode('utf8'))
+    except FileNotFoundError:
+        print("Warning: No `rustfilt` program found, symbols will not be demangled", file=sys.stderr)
+        pass
+
+    filtered_symbols = filtered_symbols.decode('utf8').split("\n")
+    assert len(filtered_symbols) == symbol_count, "%d != %d" % (len(filtered_symbols), symbol_count)
+
+    filtered_symbols = iter(filtered_symbols)
+    for s in symtable:
+        s['sym'] = next(filtered_symbols)
+        s['alias'] = [next(filtered_symbols) for _ in s['alias']]
+
 if __name__ == "__main__":
     # Define some command line args
     p = argparse.ArgumentParser()
@@ -381,6 +408,10 @@ if __name__ == "__main__":
     symboljoin(symtable, nm_out)
     # check if the path for all symbols is set
     check_completeness(symtable)
+
+    # clean up names by running them through rustfilt (if it exists); may later
+    # be extended to run c++filt as well
+    demangle(symtable)
 
     # dump symbols to STDIO if verbose option is set
     if args.v or args.m:
