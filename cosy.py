@@ -154,9 +154,9 @@ def parse_elffile(elffile, prefix, appdir, riot_base=None):
     rbase = ["riotbuild/riotproject"]
     if riot_base:
         rbase.append(riot_base.strip("/"))
-    else:
-        rbase.append("RIOT")
-        rbase.append("riotbuild/riotbase")
+
+    rbase.append("RIOT")
+    rbase.append("riotbuild/riotbase")
     riot_base = "|".join([f'{p}/build|{p}' for p in rbase])
 
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
