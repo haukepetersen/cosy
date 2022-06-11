@@ -28,7 +28,6 @@ import json
 import frontend_server
 
 ROOT = path.join(Path(path.abspath(__file__)).parent, "root")
-PORT = 12345
 
 
 def add_sym(target, sym):
@@ -352,6 +351,7 @@ if __name__ == "__main__":
     p.add_argument("-c", type=argparse.FileType('w'),
                    help="Write module sizes to cvs file")
     p.add_argument("-d", action="store_true", help="Don't run as web server")
+    p.add_argument("--port", default="12345", help="Webserver port", type=int)
     args = p.parse_args()
 
     # extract path to elf and map file
@@ -407,4 +407,4 @@ if __name__ == "__main__":
     print(subprocess.check_output((args.p + 'size', elffile)).decode("utf-8"))
 
     if not args.d:
-        frontend_server.run(ROOT, PORT, 'index.html')
+        frontend_server.run(ROOT, args.port, 'index.html')
