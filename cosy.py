@@ -162,7 +162,7 @@ def parse_elffile(elffile, prefix, appdir, riot_base=None):
     c = re.compile(r"(?P<addr>[0-9a-f]+) "
                    r"(?P<type>[tbdTDB]) "
                    r"(?P<sym>[0-9a-zA-Z_$.]+)\s+"
-                   r"(.+/)?"
+                   r"(.*/)?"
                    r"("
                    r"{appdir}|"
                    r"{riot_base}|"
